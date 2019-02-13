@@ -1,0 +1,15 @@
+=== Général
+    - Les variables, fonctions et classes doivent être écrites en camel case
+    - Tout doit être écrit en anglais à part la doc
+    - Le nom des fichiers doivent être écris avec un underscore pour représenter les espaces
+    - Les classes doivent se trouver dans le dossier src/class et doivent posséder l'extenstion .class.php
+    - Chaque classe doit posséder un namespace représentant le dossier dans lequel elle se trouve
+
+=== Organisation du service REST
+Toutes les données entrantes ou sortantes du service doivent êtres en json. + 
+
+    1. L'utilisateur entre sur l'application via les fichiers contenant les routes dans le dossier WS + 
+    2. Selon la route demandée, le contrôleur correspondant est instancié
+    3. Après avoir traité les données, le contrôleur devra se charger d'appeler la bonne DAO si besoin
+
+Un controlleur pour une DAO, chaque fichier conrôleur a son fichier DAO correspondant +

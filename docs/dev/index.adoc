@@ -1,0 +1,20 @@
+:toc: left
+= Documentation développeurs
+
+Toute la documentation concernant le développement doit être inscrite dans ce fichier + 
+Aucuns commentaires de docs doivent être trouvés dans les fichiers sources
+
+== Générer la documentation
+
+- Pour transformer les fichier adocs en html run : +
+    **asciidoctor monFichier.adoc**
+- Privilégiez la création de fichier pour la doc concernant les différenes parties du code + 
+    ajouter un fichier à l'index via l'indication : **include::pathToFile[]**
+
+== Coding Rules
+include::coding_rules.adoc[]
+
+== Git Flow
+include::git_flow.adoc[]
+
+== Base de données
