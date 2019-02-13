@@ -22,7 +22,7 @@ spl_autoload_register(function($className){
     include __DIR__ . '\\class\\' . $className . '.class.php';
 });
 
-$userCtrl = new UserController();
+$userCtrl = new UserController(); 
 
 ///SRC
 
