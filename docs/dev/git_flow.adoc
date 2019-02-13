@@ -1,0 +1,16 @@
+Le versinoning devra suivre la méthode git flow. + 
+Le gestionnaire de version git sera utilisé et un dépôt distant hébergé sur github sera utilisé. +
+
+- La branche master contient la dernière version du projet
+- La branche develop est la branche de référence des développement elle est commune à toutes les branches de releases et de fix
+** Les branches de feature devront suivre la nomenclature suivante : __f-nom_branche__
+** Les branches de hotfix devront suivre la nomenclature suivante : __h-nom_hotfix__
+- Lorsqu'une feature ou un hotfix est terminé, la branche doit être mergé sur la branche develop après avoir été passé sous une revue de code
+- Lorsqu'une nouvelle version doit être faîtes mergé la branche dévelop sur la branche release puis après avoir effectué les dernières modifications avec la revue de code, merger la branche release sur la branche master en effectuant un tag avec le nouveau numéro de version
+
+Supprimer les branches de hotfix et feature après merge. + 
+
+=== Branches Eternelles
+- master
+- develop
+- release
