@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  webapp:
+    tty: true
+    stdin_open: true
+    build: 
+      context: .
+      dockerfile: ./container/webapp/Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./logs:/var/www/html
+      - ./container/webapp/default:/etc/nginx/sites-available/default
+    links:
+      - database
+  
+  database:
+    tty: true
+    build:
+      context: .
+      dockerfile: container/database/Dockerfile
+    ports:
+      - "3306:3306"

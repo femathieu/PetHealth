@@ -19,7 +19,7 @@ $logWriter->setFile($path);
 $logWriter->openFile();
 
 spl_autoload_register(function($className){
-    include __DIR__ . '\\class\\' . $className . '.class.php';
+    include __DIR__ . '/class/' . str_replace('\\', '/', $className) . '.class.php';
 });
 
 $userCtrl = new UserController(); 

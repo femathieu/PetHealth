@@ -5,8 +5,7 @@ namespace Controller;
 class UserController {
     private $name;
 
-    public function __construct($name){
-        $this->name = $name;
+    public function __construct(){
     }
 
     public function getName(){
