@@ -1,3 +1,4 @@
+=== Général
 Le versinoning devra suivre la méthode git flow. + 
 Le gestionnaire de version git sera utilisé et un dépôt distant hébergé sur github sera utilisé. +
 
@@ -8,7 +9,9 @@ Le gestionnaire de version git sera utilisé et un dépôt distant hébergé sur
 - Lorsqu'une feature ou un hotfix est terminé, la branche doit être mergé sur la branche develop après avoir été passé sous une revue de code
 - Lorsqu'une nouvelle version doit être faîtes mergé la branche dévelop sur la branche release puis après avoir effectué les dernières modifications avec la revue de code, merger la branche release sur la branche master en effectuant un tag avec le nouveau numéro de version
 
-Supprimer les branches de hotfix et feature après merge. + 
+Supprimer les branches de hotfix après merge. + 
+
+NOTE: Lors d'une release penser à faire un tag avec le numéro de version qui est release. +
 
 === Branches Eternelles
 - master
