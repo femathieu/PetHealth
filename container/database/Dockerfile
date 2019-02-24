@@ -8,6 +8,7 @@ RUN apt-get install vim -y
 RUN sed -i -e "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/g" /etc/mysql/mysql.conf.d/mysqld.cnf
 
 COPY ./container/database/db.sql /
+COPY ./container/database/pethealth.sql /
 COPY ./container/database/start.sh /
 
 CMD ["/bin/bash", "/start.sh"]
