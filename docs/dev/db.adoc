@@ -1,0 +1,4 @@
+=== Général
+Accès à la base de donnée pethealth via l'utilisateur web. +
+Possibilité de se connecter à l'extérieur du container uniquement avec l'utilisateur web car il est enregistré avec comme paramètre pour host : %, cela permet de se connecter depuis n'importe quel ip. +
+L'utilisateur root peut se connecter uniquement depuis l'intérieur du container.
