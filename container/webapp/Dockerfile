@@ -13,6 +13,7 @@ RUN sed -i -e "s/;date.timezone\s*=\s*/date.timezone = Europe\/Paris/g" /etc/php
 RUN sed -i -e "s/listen\s*=\s*\/run\/php\/php7.2-fpm.sock/listen = \/var\/run\/php\/php7.2-fpm.sock/g" /etc/php/7.2/fpm/pool.d/www.conf
 
 COPY ./src /var/www/html/
+RUN chown -R www-data:www-data /var/www/html
 
 ADD ./container/webapp/start.sh /
 
