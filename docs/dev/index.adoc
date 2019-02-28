@@ -18,4 +18,4 @@ include::coding_rules.adoc[]
 include::git_flow.adoc[]
 
 == Base de données
-include::db.adoc[]
+include::db.adoc[] 
