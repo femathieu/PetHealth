@@ -221,3 +221,683 @@ Stack trace:
 #8 /var/www/html/src/index.php(36): Slim\App->run()
 #9 {main}
   thrown in /var/www/html/src/index.php on line 32
+[03-Mar-2019 19:36:11 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\UserDao' not found in /var/www/html/src/rest/class/Controller/UserController.class.php:12
+Stack trace:
+#0 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#1 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#2 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#10 {main}
+  thrown in /var/www/html/src/rest/class/Controller/UserController.class.php on line 12
+[03-Mar-2019 19:36:13 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\UserDao' not found in /var/www/html/src/rest/class/Controller/UserController.class.php:12
+Stack trace:
+#0 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#1 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#2 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#10 {main}
+  thrown in /var/www/html/src/rest/class/Controller/UserController.class.php on line 12
+[03-Mar-2019 19:50:05 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /var/www/html/src/rest/class/DAO/UserDao.class.php:15
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 15
+[03-Mar-2019 19:51:09 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /var/www/html/src/rest/class/DAO/UserDao.class.php:15
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 15
+[03-Mar-2019 19:51:49 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /var/www/html/src/rest/class/DAO/UserDao.class.php:15
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 15
+[03-Mar-2019 19:52:11 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[03-Mar-2019 20:40:35 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[03-Mar-2019 20:40:38 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[03-Mar-2019 20:40:39 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[03-Mar-2019 20:40:40 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[03-Mar-2019 21:12:19 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[04-Mar-2019 09:24:22 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[04-Mar-2019 09:25:12 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[04-Mar-2019 09:25:23 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[04-Mar-2019 09:25:24 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[04-Mar-2019 09:25:24 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[04-Mar-2019 09:25:24 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[04-Mar-2019 09:25:24 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[04-Mar-2019 09:25:25 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[04-Mar-2019 09:25:25 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[04-Mar-2019 09:25:25 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[04-Mar-2019 09:25:25 Europe/Paris] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /var/www/html/src/rest/class/DAO/Db.class.php:18
+Stack trace:
+#0 /var/www/html/src/rest/class/DAO/Db.class.php(18): PDO->__construct('mysql:host=loca...', 'web', 'capima', 'dbname=Pethealt...')
+#1 /var/www/html/src/rest/class/DAO/UserDao.class.php(10): DAO\Db->__construct()
+#2 /var/www/html/src/rest/class/Controller/UserController.class.php(12): DAO\UserDao->__construct()
+#3 /var/www/html/src/rest/WS/user.php(8): Controller\UserController->__construct()
+#4 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /var/www/html/src/rest/index.php(35): Slim\App->run()
+#13 {main}
+  thrown in /var/www/html/src/rest/class/DAO/Db.class.php on line 18
+[04-Mar-2019 10:02:49 Europe/Paris] PHP Fatal error:  Cannot declare class LogWriter, because the name is already in use in /var/www/html/log_writer.php on line 11
+[04-Mar-2019 10:03:23 Europe/Paris] PHP Fatal error:  Cannot declare class LogWriter, because the name is already in use in /var/www/html/log_writer.php on line 11
+[04-Mar-2019 10:03:23 Europe/Paris] PHP Fatal error:  Cannot declare class LogWriter, because the name is already in use in /var/www/html/log_writer.php on line 11
+[04-Mar-2019 10:03:23 Europe/Paris] PHP Fatal error:  Cannot declare class LogWriter, because the name is already in use in /var/www/html/log_writer.php on line 11
+[04-Mar-2019 10:03:23 Europe/Paris] PHP Fatal error:  Cannot declare class LogWriter, because the name is already in use in /var/www/html/log_writer.php on line 11
+[04-Mar-2019 10:03:24 Europe/Paris] PHP Fatal error:  Cannot declare class LogWriter, because the name is already in use in /var/www/html/log_writer.php on line 11
+[04-Mar-2019 10:35:01 Europe/Paris] PHP Warning:  include(/var/www/html/src/rest/class/DAO/PDO.class.php): failed to open stream: No such file or directory in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:35:01 Europe/Paris] PHP Warning:  include(): Failed opening '/var/www/html/src/rest/class/DAO/PDO.class.php' for inclusion (include_path='.:/usr/share/php') in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:35:01 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(36): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:35:29 Europe/Paris] PHP Warning:  include(/var/www/html/src/rest/class/DAO/PDO.class.php): failed to open stream: No such file or directory in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:35:29 Europe/Paris] PHP Warning:  include(): Failed opening '/var/www/html/src/rest/class/DAO/PDO.class.php' for inclusion (include_path='.:/usr/share/php') in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:35:29 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(36): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:35:30 Europe/Paris] PHP Warning:  include(/var/www/html/src/rest/class/DAO/PDO.class.php): failed to open stream: No such file or directory in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:35:30 Europe/Paris] PHP Warning:  include(): Failed opening '/var/www/html/src/rest/class/DAO/PDO.class.php' for inclusion (include_path='.:/usr/share/php') in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:35:30 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(36): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:35:30 Europe/Paris] PHP Warning:  include(/var/www/html/src/rest/class/DAO/PDO.class.php): failed to open stream: No such file or directory in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:35:30 Europe/Paris] PHP Warning:  include(): Failed opening '/var/www/html/src/rest/class/DAO/PDO.class.php' for inclusion (include_path='.:/usr/share/php') in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:35:30 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(36): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:35:30 Europe/Paris] PHP Warning:  include(/var/www/html/src/rest/class/DAO/PDO.class.php): failed to open stream: No such file or directory in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:35:30 Europe/Paris] PHP Warning:  include(): Failed opening '/var/www/html/src/rest/class/DAO/PDO.class.php' for inclusion (include_path='.:/usr/share/php') in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:35:30 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(36): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:36:17 Europe/Paris] PHP Warning:  The use statement with non-compound name 'PDO' has no effect in /var/www/html/src/rest/class/DAO/Db.class.php on line 2
+[04-Mar-2019 10:36:17 Europe/Paris] PHP Warning:  include(/var/www/html/src/rest/class/DAO/PDO.class.php): failed to open stream: No such file or directory in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:36:17 Europe/Paris] PHP Warning:  include(): Failed opening '/var/www/html/src/rest/class/DAO/PDO.class.php' for inclusion (include_path='.:/usr/share/php') in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:36:17 Europe/Paris] PHP Fatal error:  Class 'DAO\PDO' not found in /var/www/html/src/rest/class/Controller/UserController.class.php on line 12
+[04-Mar-2019 10:38:33 Europe/Paris] PHP Warning:  include(/var/www/html/src/rest/class/DAO/PDO.class.php): failed to open stream: No such file or directory in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:38:33 Europe/Paris] PHP Warning:  include(): Failed opening '/var/www/html/src/rest/class/DAO/PDO.class.php' for inclusion (include_path='.:/usr/share/php') in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:38:33 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(36): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:38:34 Europe/Paris] PHP Warning:  include(/var/www/html/src/rest/class/DAO/PDO.class.php): failed to open stream: No such file or directory in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:38:34 Europe/Paris] PHP Warning:  include(): Failed opening '/var/www/html/src/rest/class/DAO/PDO.class.php' for inclusion (include_path='.:/usr/share/php') in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:38:34 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(36): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:38:34 Europe/Paris] PHP Warning:  include(/var/www/html/src/rest/class/DAO/PDO.class.php): failed to open stream: No such file or directory in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:38:34 Europe/Paris] PHP Warning:  include(): Failed opening '/var/www/html/src/rest/class/DAO/PDO.class.php' for inclusion (include_path='.:/usr/share/php') in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:38:34 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(36): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:38:34 Europe/Paris] PHP Warning:  include(/var/www/html/src/rest/class/DAO/PDO.class.php): failed to open stream: No such file or directory in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:38:34 Europe/Paris] PHP Warning:  include(): Failed opening '/var/www/html/src/rest/class/DAO/PDO.class.php' for inclusion (include_path='.:/usr/share/php') in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:38:34 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(36): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:41:30 Europe/Paris] PHP Warning:  include(/var/www/html/src/rest/class/DAO/PDO.class.php): failed to open stream: No such file or directory in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:41:30 Europe/Paris] PHP Warning:  include(): Failed opening '/var/www/html/src/rest/class/DAO/PDO.class.php' for inclusion (include_path='.:/usr/share/php') in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:41:30 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(36): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:41:31 Europe/Paris] PHP Warning:  include(/var/www/html/src/rest/class/DAO/PDO.class.php): failed to open stream: No such file or directory in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:41:31 Europe/Paris] PHP Warning:  include(): Failed opening '/var/www/html/src/rest/class/DAO/PDO.class.php' for inclusion (include_path='.:/usr/share/php') in /var/www/html/src/rest/index.php on line 29
+[04-Mar-2019 10:41:31 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(36): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:42:04 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(39): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:42:21 Europe/Paris] PHP Fatal error:  Class 'DAO\PDO' not found in /var/www/html/src/rest/class/Controller/UserController.class.php on line 12
+[04-Mar-2019 10:42:32 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(39): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:44:22 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(39): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:44:23 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(39): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:44:23 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(39): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:44:23 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(39): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:44:23 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(39): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
+[04-Mar-2019 10:44:24 Europe/Paris] PHP Fatal error:  Uncaught Error: Class 'DAO\PDO' not found in /var/www/html/src/rest/class/DAO/UserDao.class.php:17
+Stack trace:
+#0 /var/www/html/src/rest/class/Controller/UserController.class.php(20): DAO\UserDao->getUserList()
+#1 /var/www/html/src/rest/WS/user.php(10): Controller\UserController->getUserList()
+#2 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#3 /var/www/html/src/rest/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(325): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#6 /var/www/html/src/rest/vendor/slim/slim/Slim/Route.php(297): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(433): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /var/www/html/src/rest/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(114): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /var/www/html/src/rest/vendor/slim/slim/Slim/App.php(315): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /var/www/html/src/rest/index.php(39): Slim\App->run()
+#11 {main}
+  thrown in /var/www/html/src/rest/class/DAO/UserDao.class.php on line 17
