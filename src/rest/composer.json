@@ -3,10 +3,14 @@
     "description": "health book for pets",
     "type": "project",
     "require": {
-        "slim/slim": "3.0"
+        "slim/slim": "3.0",
+        "propel/propel": "~2.0@dev",
+        "monolog/monolog": ">=1.24.0"
     },
     "require-dev": {
-        "slim/slim": "3.0"
+        "slim/slim": "3.0",
+        "propel/propel": "~2.0@dev",
+        "monolog/monolog": ">=1.24.0"
     },
     "authors": [
         {
