@@ -13,7 +13,7 @@ class UserDao extends Db {
     }
 
     public function getUserList(){
-        $sql = "SELECT id, label FROM test";
+        $sql = "SELECT uuid, name, firstname, email FROM user";
         $query = $this->db->query($sql);
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
