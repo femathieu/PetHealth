@@ -19,6 +19,9 @@ RUN sed -i -e "s/pdo_mysql.default_socket=/pdo_mysql.default_socket=\/var\/run\/
 
 COPY ./src/ /var/www/html/src
 
+VOLUME /var/www/html/logs
+VOLUME /var/www/html/src
+
 ADD ./container/webapp/start.sh /
 
 CMD ["/bin/bash", "/start.sh"]
