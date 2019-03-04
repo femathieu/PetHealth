@@ -14,6 +14,7 @@ RUN sed -i -e "s/post_max_size\s*=\s*8M/post_max_size = 100M/g" /etc/php/7.2/fpm
 RUN sed -i -e "s/;date.timezone\s*=\s*/date.timezone = Europe\/Paris/g" /etc/php/7.2/fpm/php.ini
 RUN sed -i -e "s/listen\s*=\s*\/run\/php\/php7.2-fpm.sock/listen = \/var\/run\/php\/php7.2-fpm.sock/g" /etc/php/7.2/fpm/pool.d/www.conf
 RUN sed -i -e "s/;extension=pdo_mysql/extension=pdo_mysql/g" /etc/php/7.2/fpm/php.ini
+RUN sed -i -e "s/pdo_mysql.default_socket=/pdo_mysql.default_socket=\/var\/run\/mysqld\/mysqld.sock/g" /etc/php/7.2/fpm/php.ini
 
 
 COPY ./src/ /var/www/html/src
