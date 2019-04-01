@@ -23,19 +23,15 @@ class UserDao extends Db {
      * @param: $data contains all detail of the user to add
      */
     public function add($data){
+        $this->app->logger->addInfo('UserDao->add');
         if( isset($data['name']) && !empty(['name']) &&
             isset($data['firstname']) && !empty(['firstname']) &&
             isset($data['email']) && !empty(['email']) &&
-            isset($data['password']) && !empty(['password']) &&
-            isset($data['passwordv']) && !empty(['passwordv'])
+            isset($data['passwd']) && !empty(['passwd']) && 
+            isset($data['passwdv']) && !empty(['passwdv'])
         ){
-            if($data['password'] == $data['passwordv']){
-                if($this->validEmail($data['email'])){
-                    $uuidQuoted = $this->db()->quote(\uniqid());
-                    $nameQuoted = $this->db()->quote($data['name']);
-                    $firstnameQuoted = $this->db()->quote($data['firstname']);
-                    $passwordQuoted = $this->db()->quote(password_hash($data['password'], PASSWORD_DEFAULT));
-                    $emailQuoted = $this->db()->quote($data['email']);
+            if($data['passwd'] == $data['passwdv']){
+                if(!$this->validEmail($data['email'])){
                     $sql = "INSERT INTO user ( uuid, 
                                                name, 
                                                firstname, 
@@ -51,39 +47,60 @@ class UserDao extends Db {
                                                 )";
                     $query = $this->db()->prepare($sql);
                     $query->execute(array(
-                        ":uuid" => $uuidQuoted,
-                        ":name" => $nameQuoted,
-                        ":firstname" => $firstnameQuoted,
-                        ":email" => $emailQuoted,
-                        ":passwd" => $passwordQuoted
+                        ":uuid" => \uniqid(),
+                        ":name" => $data['name'],
+                        ":firstname" => $data['firstname'],
+                        ":email" => $data['email'],
+                        ":passwd" => password_hash($data['passwd'], PASSWORD_BCRYPT)
                     ));
                 }
             }
+        }else{
+            $this->app->logger->addInfo('missing field in $data');
         }
     }
 
     /**
      * return boolean
-     * Check if the given $email is valid - if it not exists in the db and if it have correct syntax
+     * Check if the given $email is valid - if it exists in the db and if it have correct syntax
      * @param: $email - target
      */
     private function validEmail($email){
         $result = array();
         $ret = false;
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-            $emailQuoted = $this->db()->quote($email);
             $sql = "SELECT uuid FROM user WHERE email = :email";
             $query = $this->db()->prepare($sql);
             $query->execute(array(
-                ':email' => $emailQuoted
+                ':email' => $email
             ));
             $result = $query->fetch(PDO::FETCH_ASSOC);
         }
-        if($result['uuid'] == null && $result['uuid'] == ""){
+        if(isset($result['uuid'])){
             $ret = true;
         }else{
-            $this->app->logger->addInfo('user '.$email.' already exists');
+            $this->app->logger->addInfo('user '.$email.' does not exists');
         }
         return $ret;
+    }
+
+    /**
+     * Retreive a user from his given email
+     * @param: $email the email of the user we're searching for
+     * return empty array if no user found
+     */
+    public function getUserByEmail($email){
+        $this->app->logger->addInfo('UserDao->getUserByEmail');
+        $result = array();
+        if($this->validEmail($email)){
+            $emailQuoted = $this->db()->quote($email);
+            $sql = "SELECT uuid, name, firstname, email, passwd, rec_st FROM user WHERE email = $emailQuoted";
+            $query = $this->db()->query($sql);
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+        }else{
+            $this->app->logger->addInfo("email : $email is invalid");
+        }
+        
+        return $result;
     }
 }
