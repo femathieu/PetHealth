@@ -26,6 +26,7 @@ class UserController {
      * @param: $data contains all rows needed for a user
      */
     public function add($data){
+        $this->app->logger->addInfo("UserController->add");
         return $this->dao->add($data);
     }
 

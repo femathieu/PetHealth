@@ -28,7 +28,7 @@ $app->get('/user/list/{token}', function(Request $request, Response $response, a
 $app->post('/user/add', function(Request $req, Response $res, array $args){
     $ctrl = new UserController($this);
     $params = json_decode($req->getBody(), true);
-    $ctrl->add($params);
+    echo json_encode(array("result" => $ctrl->add($params)));
 });
 
 /**

@@ -40,6 +40,16 @@ export class LoginService {
       });
   }
 
+  register(): void {
+    this.client.post(`${this.config.getApiBaseUrl}/user/add`, this.user, this.httpOptions)
+      .pipe(
+        tap((_) => {console.log('register')}),
+        catchError(this.handleError('register', null))
+      ).subscribe((response: any) => {
+        console.log(response.result);
+      });
+  }
+
   private handleError<T>(operation = 'operation', result?: T){
     return (error: any): Observable<T> => {
       console.error(error);
