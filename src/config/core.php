@@ -27,10 +27,10 @@ function generateToken($configToken, $user){
 /**
  * return true if given token is valid
  */
-function validToken($configToken, $token, $app){
+function validToken($app){
     $ret = false;
     try {
-        $decoded = JWT::decode($token, $configToken["key"], array('HS256'));
+        $decoded = JWT::decode(getallheaders()['Authorization'], $app->get('configToken')["key"], array('HS256'));
         $ctrl = new UserController($app);
         if(sizeof($ctrl->getUserByEmail($decoded->data->email)) > 0){
             $ret = true;
@@ -40,4 +40,16 @@ function validToken($configToken, $token, $app){
         $app->logger->addInfo($e->getMessage());
     }
     return $ret;
+}
+
+if (!function_exists('getallheaders')) {
+    function getallheaders() {
+    $headers = [];
+    foreach ($_SERVER as $name => $value) {
+        if (substr($name, 0, 5) == 'HTTP_') {
+            $headers[str_replace(' ', '-', ucwords(strtolower(str_replace('_', ' ', substr($name, 5)))))] = $value;
+        }
+    }
+    return $headers;
+    }
 }

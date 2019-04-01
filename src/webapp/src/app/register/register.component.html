@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <input type="text" placeholder="nom" [(ngModel)]="loginService.user.name">
+    </div>
+    <div class="col-6">
+      <input type="text" placeholder="prénom" [(ngModel)]="loginService.user.firstname">
+    </div>
+    <div class="col-12">
+      <input type="text" placeholder="email" [(ngModel)]="loginService.user.email">
+    </div>
+    <div class="col-6">
+      <input type="text" placeholder="mot de passe" [(ngModel)]="loginService.user.passwd">
+    </div>
+    <div class="col-6">
+      <input type="text" placeholder="retaper le mot de passe" [(ngModel)]="loginService.user.passwdv">
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-success" (click)="save()">valider</button>
+  </div>
+</div>

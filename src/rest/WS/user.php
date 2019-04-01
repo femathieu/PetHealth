@@ -11,13 +11,13 @@ require_once($path);
  * Get the list of all user
  * @todo : RESTRICT THIS ROUTE FOR ADMIN
  */
-$app->get('/user/list/{token}', function(Request $request, Response $response, array $args){
+$app->get('/user/list/{token}', function(Request $request, Response $response, array $args) use ($app){
     $this->logger->addInfo('ws -> test');
     $ctrl = new UserController($this);
-    if(validToken($this->get('configToken'), $args['token'], $this)){
+    if(validToken($this)){
         echo json_encode($ctrl->getUserList());
     }else{
-        echo json_encode(array("result" => false));
+        $app->halt(403);
     }
 });
 
@@ -28,7 +28,7 @@ $app->get('/user/list/{token}', function(Request $request, Response $response, a
 $app->post('/user/add', function(Request $req, Response $res, array $args){
     $ctrl = new UserController($this);
     $params = json_decode($req->getBody(), true);
-    $ctrl->add($params);
+    echo json_encode(array("result" => $ctrl->add($params)));
 });
 
 /**
@@ -63,4 +63,13 @@ $app->post('/user/login', function(Request $req, Response $res, array $args){
         $response["token"] = generateToken($this->get('configToken'), $user);
     }
     echo json_encode($response);
+});
+
+$app->get('/user/{email}', function(Request $req, Response $res, array $args) use ($app){
+    if(validToken($this)){
+        $ctrl = new UserController($this);
+        echo json_encode($ctrl->getUserByEmail($args['email']));
+    }else{
+        $app->halt(403);
+    }
 });
