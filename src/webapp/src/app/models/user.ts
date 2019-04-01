@@ -1,7 +1,9 @@
 export class User {
-    uuid: String;
-    name: String;
-    firstname: String;
-    passwd: String;
-    passwdv: String;
+    uuid: string;
+    age: number;
+    name: string;
+    firstname: string;
+    email: string;
+    passwd: string;
+    passwdv: string;
 }

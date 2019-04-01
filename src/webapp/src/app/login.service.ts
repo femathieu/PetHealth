@@ -4,6 +4,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 
 import { User } from './models/user';
+import { UserService } from './user.service';
+import { AppConfig } from './config';
 
 @Injectable({
   providedIn: 'root'
@@ -13,19 +15,29 @@ export class LoginService {
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
+  public user: User;
+  private config: AppConfig = new AppConfig();
 
   constructor(
     private client: HttpClient,
+    private userService: UserService,
   ) {
-
+    this.user = new User();
   }
 
-  login(user: User) : Observable<any>{
-    return this.client.post(`${this.baseUrlApi}/user/login`, user, this.httpOptions)
+  login(user: User) {
+    this.client.post(`${this.config.getApiBaseUrl}/user/login`, user, this.httpOptions)
       .pipe(
         tap(_ => {console.log('login')}),
         catchError(this.handleError<User>('login', new User()))
-      )
+      ).subscribe((response: any) => {
+        if(response.result){
+          localStorage.setItem('token', response.token);
+          this.user = this.userService.getUserByEmail(user.email);
+        }else{
+          console.log(response.msg)
+        }
+      });
   }
 
   private handleError<T>(operation = 'operation', result?: T){

@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     console.log("LoginComponent->login()");
-    this.loginService.login(this.user).subscribe(() => {
-    });
+    this.loginService.login(this.user);
   }
 }
