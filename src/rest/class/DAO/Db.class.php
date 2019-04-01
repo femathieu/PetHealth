@@ -24,12 +24,11 @@ abstract class Db {
                 self::USER_PWD,
                 self::OPT
             );
-            // $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $e){
             die('Erreur : '.$e->getMessage());
         }
     }
-    public function getDb(){
+    public function db(){
         return $this->db;
     }
 

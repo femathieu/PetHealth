@@ -8,14 +8,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 require_once(__DIR__ . '/log_writer.php');
 require_once('../config/config.php');
 
+$cutPathLog = explode('/src', __DIR__);
+$path = $cutPathLog[0] . '/logs/server_error.log';
 //set log path
 ini_set('error_log', $path); 
 
 // Logging file size
 ini_set('log_errors_max_len', 2048); 
 
-// error_reporting(-1);
-// ini_set('display_errors', 1);
+error_reporting(-1);
+ini_set('display_errors', 1);
 
 spl_autoload_register(function($className){
     $file = __DIR__ . '/class/' . str_replace('\\', '/', $className) . '.class.php';
@@ -37,6 +39,15 @@ $container['logger'] = function($c) {
 };
 
 $app->getContainer()->logger->addInfo('start session');
+
+$app->add(function($req, $res, $next){
+    $next($req, $res);
+    return $res
+            ->withHeader('Access-Control-Allow-Origin', 'http://localhost')
+            ->withHeader('Content-Type', 'application/json; charset=UTF-8')
+            ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With')
+            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+});
 
 require_once(__DIR__ . '/WS/user.php');
 
