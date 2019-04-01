@@ -1,12 +1,19 @@
-<div>
-  <div>
-    <label>
-      email: 
-      <input type="text" [(ngModel)]="user.email" placeholder="email">
-    </label>
-    <label>
-      mot de passe:
-      <input type="text" [(ngModel)]="user.passwd" placeholder="mot de passe">
-    </label>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <label>
+        email: 
+        <input type="text" [(ngModel)]="user.email" placeholder="email">
+      </label>
+    </div>
+    <div class="col-12">
+      <label>
+        mot de passe:
+        <input type="text" [(ngModel)]="user.passwd" placeholder="mot de passe">
+      </label>
+    </div>
+    <div class="col-12">
+      <button (click)="login()" class="btn btn-primary">valider</button>
+    </div>
   </div>
 </div>
