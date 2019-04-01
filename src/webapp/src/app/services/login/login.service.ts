@@ -3,9 +3,9 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 
-import { User } from './models/user';
-import { UserService } from './user.service';
-import { AppConfig } from './config';
+import { User } from '../../models/user';
+import { UserService } from '../user/user.service';
+import { AppConfig } from '../../config';
 
 @Injectable({
   providedIn: 'root'

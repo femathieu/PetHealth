@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { User } from './models/user';
+import { User } from '../../models/user';
 import { HttpClient } from '@angular/common/http';
-import { AppConfig } from './config';
+import { AppConfig } from '../../config';
 import { Observable, of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 
