@@ -7,6 +7,10 @@ use \DAO\UserDao;
 class UserController {
     private $dao;
     private $app;
+    const INVALID_EMAIL = 1;
+    const INVALID_PASSWD = 2;
+    const CORRECT_IDS = 3;
+    const INVALID_IDS = 4;
 
     public function __construct($app){
         $this->app = $app;
@@ -29,7 +33,7 @@ class UserController {
      * Retreive a user from his given email
      * @param: $email the email of the user we're searching for
      */
-    private function getUserByEmail($email){
+    public function getUserByEmail($email){
         return $this->dao->getUserByEmail($email);
     }
 
@@ -40,19 +44,28 @@ class UserController {
     public function login($data){
         $this->app->logger->addInfo('UserController->login');
         $user = array();
+        $ret = null;
         if(isset($data['email']) && isset($data['passwd'])){
-            $user = $this->dao->getUserByEmail($data['email']);
-            $correctPasswd = false;
+            $user = $this->dao->login($data['email']);
             if(sizeof($user) > 0){
-                if(\password_verify($data['passwd'], $user['passwd'])){
-                    unset($user['passwd']);
-                    $correctPasswd = true;
-                    //TODO : generate token
+                if($user['rec_st'] != 'D'){
+                    if(\password_verify($data['passwd'], $user['passwd'])){
+                        unset($user['passwd']);
+                        $ret = self::CORRECT_IDS;
+                        // $user["token"] = generateToken($configToken, $user);
+                    }else{
+                        $ret = self::INVALID_PASSWD;
+                        $this->app->logger->addInfo('user : '.$user['email'].'is deleted');
+                    }
                 }
+            }else{
+                $ret = self::INVALID_EMAIL;
             }
         }else{
             $this->app->logger->addInfo('error invalid email or passwd');
+            $ret = self::INVALID_IDS;
         }
-        return $user;
+        return $ret;
     }
+
 }

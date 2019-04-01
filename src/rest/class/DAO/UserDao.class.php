@@ -94,6 +94,26 @@ class UserDao extends Db {
         $result = array();
         if($this->validEmail($email)){
             $emailQuoted = $this->db()->quote($email);
+            $sql = "SELECT uuid, name, firstname, email, rec_st FROM user WHERE email = $emailQuoted";
+            $query = $this->db()->query($sql);
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+        }else{
+            $this->app->logger->addInfo("email : $email is invalid");
+        }
+        
+        return $result;
+    }
+
+    /**
+     * Retreive all data of user from his given email
+     * @param: $email the email of the user we're searching for
+     * return empty array if no user found
+     */
+    public function login($email){
+        $this->app->logger->addInfo('UserDao->getUserByEmail');
+        $result = array();
+        if($this->validEmail($email)){
+            $emailQuoted = $this->db()->quote($email);
             $sql = "SELECT uuid, name, firstname, email, passwd, rec_st FROM user WHERE email = $emailQuoted";
             $query = $this->db()->query($sql);
             $result = $query->fetch(PDO::FETCH_ASSOC);
