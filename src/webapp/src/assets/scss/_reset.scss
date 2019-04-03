@@ -1,0 +1,37 @@
+// ---------------------------------------------------------
+// Reset
+// ---------------------------------------------------------
+
+* {
+	&, &:before, &:after {
+        box-sizing: border-box;
+    }
+}
+
+body{
+    margin: 0;
+    font: calculate-rem($body-font-size)/1em $body-font-family;
+}
+
+html{
+    font-size: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, ul, ol {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: $primary;
+		&:hover{
+			text-decoration: none;
+		}
+}
+figure {
+    margin: 0;
+    position: relative;
+}

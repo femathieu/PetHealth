@@ -1,0 +1,20 @@
+// ---------------------------------------------------------
+// Titles
+// 1 - H1 : Main-title
+// ---------------------------------------------------------
+
+.title-brand{
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    font-family: $brush;
+    font-size: 4.125rem;
+    line-height: 1.35;
+    color: #ffffff;
+}
+
+h1, .main-title{
+    font-family: $brush;
+    font-size:  1.625rem;
+    line-height: 1.38;
+    color: $lightBlue;
+}
+
