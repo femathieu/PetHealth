@@ -1,0 +1,15 @@
+// ---------------------------------------------------------
+// Functions
+// ---------------------------------------------------------
+
+@function calculate-rem($size) {
+    $rem-size: $size / $html-font-size;
+    @return #{$rem-size}rem;
+}
+
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}

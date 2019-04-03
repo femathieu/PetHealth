@@ -10,13 +10,15 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpMiddleware } from './http_middleware';
 import { RegisterComponent } from './register/register.component';
+import { HeaderOverviewComponent } from './header-overview/header-overview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderOverviewComponent
   ],
   imports: [
     BrowserModule,
