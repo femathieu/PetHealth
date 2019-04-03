@@ -11,6 +11,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpMiddleware } from './http_middleware';
 import { RegisterComponent } from './register/register.component';
 import { HeaderOverviewComponent } from './header-overview/header-overview.component';
+import { HeaderLoginComponent } from './header-login/header-login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HeaderOverviewComponent } from './header-overview/header-overview.compo
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    HeaderOverviewComponent
+    HeaderOverviewComponent,
+    HeaderLoginComponent
   ],
   imports: [
     BrowserModule,
