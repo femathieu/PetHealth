@@ -10,13 +10,19 @@
     padding: .75rem 2rem;
     color: white;
     font-family: $muli;
+    margin: .5rem auto;
+    width: fit-content;
 }
 
 .btn-secondary{
     @include border;
+    border-color: $darkBlue;
     background-color: transparent;
     color: $darkBlue;
     font-family: $muli;
+    margin: .5rem auto;
+    width: fit-content;
+    padding: .75rem 2rem;
 }
 
 .btn-square{
