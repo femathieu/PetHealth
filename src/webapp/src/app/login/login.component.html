@@ -1,25 +1,27 @@
 
 <app-header-login></app-header-login>
 
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h1 class="main-title">Connexion</h1>
-    </div>
-    <div class="col-12">
-      <label>
-        email: 
-        <input type="text" [(ngModel)]="user.email" placeholder="email">
-      </label>
-    </div>
-    <div class="col-12">
-      <label>
-        mot de passe:
-        <input type="text" [(ngModel)]="user.passwd" placeholder="mot de passe">
-      </label>
-    </div>
-    <div class="col-12">
-      <button (click)="login()" class="btn btn-primary">valider</button>
-    </div>
-  </div>
-</div>
+<main class="block-main block-main-login py-5 px-2">
+    <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="main-title">Connexion</h1>
+          </div>
+          <div class="col-12">
+            <form class="form-content py-3">
+              <div class="form-group">
+                <input type="text" [(ngModel)]="user.email" placeholder="Adresse e-mail" class="form-control">
+                <div class="invalid-feedback">
+                  Veuillez entrez une adresse e-mail valide.
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" [(ngModel)]="user.passwd" placeholder="Mot de passe" class="form-control">
+              </div>
+              <button (click)="login()" class="btn btn-primary">valider</button>
+            </form>
+      
+          </div>
+        </div>
+      </div>
+</main>
