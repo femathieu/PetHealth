@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+// ---------------------------------------------------------
+// Import - SCSS init
+// ---------------------------------------------------------
+
+@import "assets/scss/variables";
+@import "assets/scss/functions";
+@import "assets/scss/mixins";
+@import "assets/scss/reset";
+
+// ---------------------------------------------------------
+// Import - SCSS PetHealth
+// ---------------------------------------------------------
+
+@import "assets/scss/titles";
+@import "assets/scss/buttons";
+@import "assets/scss/form";
+@import "assets/scss/navbar-top";

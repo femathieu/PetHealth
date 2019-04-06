@@ -7,6 +7,13 @@ use \DAO\UserDao;
 class UserController {
     private $dao;
     private $app;
+<<<<<<< HEAD
+=======
+    const INVALID_EMAIL = 1;
+    const INVALID_PASSWD = 2;
+    const CORRECT_IDS = 3;
+    const INVALID_IDS = 4;
+>>>>>>> develop
 
     public function __construct($app){
         $this->app = $app;
@@ -22,6 +29,10 @@ class UserController {
      * @param: $data contains all rows needed for a user
      */
     public function add($data){
+<<<<<<< HEAD
+=======
+        $this->app->logger->addInfo("UserController->add");
+>>>>>>> develop
         return $this->dao->add($data);
     }
 
@@ -34,6 +45,7 @@ class UserController {
     }
 
     /**
+<<<<<<< HEAD
      * return true if passwd is valid
      * @param: $passwd password
      * @param: $passwdv repeat password
@@ -58,6 +70,36 @@ class UserController {
             $bret = true;
         }
         return $bret;
+=======
+     * return array $user with data of requested user
+     * if incorrect id return empty array
+     */
+    public function login($data){
+        $this->app->logger->addInfo('UserController->login');
+        $user = array();
+        $ret = null;
+        if(isset($data['email']) && isset($data['passwd'])){
+            $user = $this->dao->login($data['email']);
+            if(sizeof($user) > 0){
+                if($user['rec_st'] != 'D'){
+                    if(\password_verify($data['passwd'], $user['passwd'])){
+                        unset($user['passwd']);
+                        $ret = self::CORRECT_IDS;
+                        // $user["token"] = generateToken($configToken, $user);
+                    }else{
+                        $ret = self::INVALID_PASSWD;
+                        $this->app->logger->addInfo('user : '.$user['email'].'is deleted');
+                    }
+                }
+            }else{
+                $ret = self::INVALID_EMAIL;
+            }
+        }else{
+            $this->app->logger->addInfo('error invalid email or passwd');
+            $ret = self::INVALID_IDS;
+        }
+        return $ret;
+>>>>>>> develop
     }
 
 }

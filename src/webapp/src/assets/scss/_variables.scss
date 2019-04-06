@@ -1,0 +1,52 @@
+// ---------------------------------------------------------
+// Variables
+// 1 - Fonts
+// 2 - Colors
+// 3 - Columns
+// 4 - Breakpoints
+// ---------------------------------------------------------
+
+// ------------------------------------------------
+// 1 - Fonts
+// ------------------------------------------------
+
+@import url('https://fonts.googleapis.com/css?family=Muli:400,400i,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Grand+Hotel');
+
+$brush : 'Grand Hotel', cursive;
+$muli : 'Muli', sans-serif;
+
+$body-font-family: $muli;
+$html-font-size: 16 !default; // px
+$body-font-size: 14 !default; // px
+
+// ------------------------------------------------
+// 2 - Colors
+// ------------------------------------------------
+
+$darkBlue       : #14B0B6, !default; 
+$lightBlue      : #86CDD3, !default;
+$darkGrey       : #A3A3A3, !default;
+$formGrey       : #F6F6F6, !default;
+$lightGrey      : #CBCBCB, !default;
+$lightGreen     : #C3EF75, !default;
+$pink           : #FF0077, !default;
+
+$gradient       : linear-gradient(346deg, #14b0b6, #22b4ba 36%, #86cdd3);
+
+// ------------------------------------------------
+// 3 - Columns
+// ------------------------------------------------
+
+$global-width   : 1170px !default;
+$gutter-width   : 1.5em !default;
+
+// ------------------------------------------------
+// 4 - Breakpoints
+// ------------------------------------------------
+
+$screen-xxl     : 1580px !default;
+$screen-xl      : 1200px !default;
+$screen-lg      : 1024px !default;
+$screen-sm      : 768px !default;
+$screen-xs      : 576px !default;

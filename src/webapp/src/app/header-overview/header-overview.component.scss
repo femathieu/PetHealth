@@ -1,0 +1,17 @@
+// ---------------------------------------------------------
+// Header Overview
+// ---------------------------------------------------------
+
+.block-header-overview{
+    position: relative;
+    height: 45vh;
+    text-align: center;
+    margin-bottom: 1rem;
+    .background-header{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+}

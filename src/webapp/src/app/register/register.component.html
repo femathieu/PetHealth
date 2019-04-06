@@ -1,0 +1,31 @@
+<app-header-login></app-header-login>
+
+<div class="block-main block-main-register">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="main-title">Créer un compte</h1>
+      </div>
+      <div class="col-12">
+        <form>
+          <div class="form-group">
+              <input type="text" placeholder="Nom" class="form-control" [(ngModel)]="loginService.user.name">
+          </div>
+          <div class="form-group">
+              <input type="text" placeholder="Prénom" class="form-control" [(ngModel)]="loginService.user.firstname">
+          </div>
+          <div class="form-group">
+              <input type="text" placeholder="Adresse e-mail" class="form-control" [(ngModel)]="loginService.user.email">
+          </div>
+          <div class="form-group">
+              <input type="text" placeholder="Mot de passe" class="form-control" [(ngModel)]="loginService.user.passwd">
+          </div>
+          <div class="form-group">
+              <input type="text" placeholder="Confirmez le mot de passe" class="form-control" [(ngModel)]="loginService.user.passwdv">
+          </div>
+          <button class="btn btn-primary" (click)="save()">valider</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
