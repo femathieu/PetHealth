@@ -68,4 +68,31 @@ class UserController {
         return $ret;
     }
 
+    /**
+     * return true if passwd is valid
+     * @param: $passwd password
+     * @param: $passwdv repeat password
+     */
+    public function isPasswdValid($passwd, $passwdv){
+        $this->app->logger->addInfo('UserController->isPasswdValid');
+        $bret = false;
+        if($passwd == $passwdv){
+            $bret = true;
+        }
+        return $bret;
+    }
+
+    /**
+     * return true if $email is valid
+     * @param: $email email
+     */
+    public function isEmailValid($email){
+        $this->app->logger->addInfo('UserController->isEmailValid');
+        $bret = false;
+        if($this->dao->validEmail($email) && empty($this->dao->getUserByEmail($email))){
+            $bret = true;
+        }
+        return $bret;
+    }
+
 }

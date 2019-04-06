@@ -31,7 +31,7 @@ class UserDao extends Db {
             isset($data['passwdv']) && !empty(['passwdv'])
         ){
             if($data['passwd'] == $data['passwdv']){
-                if(!$this->validEmail($data['email'])){
+                if($this->validEmail($data['email']) && empty($this->getUserByEmail($data['email']))){
                     $sql = "INSERT INTO user ( uuid, 
                                                name, 
                                                firstname, 
@@ -54,6 +54,8 @@ class UserDao extends Db {
                         ":passwd" => password_hash($data['passwd'], PASSWORD_BCRYPT)
                     ));
                 }
+            }else{
+                $this->app->logger->addInfo('password doesn\'t match');
             }
         }else{
             $this->app->logger->addInfo('missing field in $data');
@@ -65,21 +67,10 @@ class UserDao extends Db {
      * Check if the given $email is valid - if it exists in the db and if it have correct syntax
      * @param: $email - target
      */
-    private function validEmail($email){
-        $result = array();
+    public function validEmail($email){
         $ret = false;
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-            $sql = "SELECT uuid FROM user WHERE email = :email";
-            $query = $this->db()->prepare($sql);
-            $query->execute(array(
-                ':email' => $email
-            ));
-            $result = $query->fetch(PDO::FETCH_ASSOC);
-        }
-        if(isset($result['uuid'])){
             $ret = true;
-        }else{
-            $this->app->logger->addInfo('user '.$email.' does not exists');
         }
         return $ret;
     }
@@ -98,7 +89,7 @@ class UserDao extends Db {
             $query = $this->db()->query($sql);
             $result = $query->fetch(PDO::FETCH_ASSOC);
         }else{
-            $this->app->logger->addInfo("email : $email is invalid");
+            $this->app->logger->addInfo("email : $email does not exists");
         }
         
         return $result;

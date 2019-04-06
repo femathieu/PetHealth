@@ -28,7 +28,21 @@ $app->get('/user/list/{token}', function(Request $request, Response $response, a
 $app->post('/user/add', function(Request $req, Response $res, array $args){
     $ctrl = new UserController($this);
     $params = json_decode($req->getBody(), true);
-    $ctrl->add($params);
+    $bparamsValid = false;
+    $msg = "";
+    if($ctrl->isPasswdValid($params['passwd'], $params['passwdv'])){
+        if($ctrl->isEmailValid($params['email'])){
+            $ctrl->add($params);
+            $bparamsValid = true;
+        }else{
+            $msg = "invalid email";
+        }
+    }else{
+        $msg = "invalid password";
+    }
+    if(!$bparamsValid){
+        return $res->withJson($msg, 400);
+    }
 });
 
 /**

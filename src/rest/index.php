@@ -41,12 +41,12 @@ $container['logger'] = function($c) {
 $app->getContainer()->logger->addInfo('start session');
 
 $app->add(function($req, $res, $next){
-    $next($req, $res);
+    $res = $next($req, $res);
     return $res
-            ->withHeader('Access-Control-Allow-Origin', 'http://localhost')
-            ->withHeader('Content-Type', 'application/json; charset=UTF-8')
-            ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With')
-            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+        ->withHeader('Access-Control-Allow-Origin', 'http://localhost')
+        ->withHeader('Content-Type', 'application/json; charset=UTF-8')
+        ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With')
+        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
 });
 
 require_once(__DIR__ . '/WS/user.php');
