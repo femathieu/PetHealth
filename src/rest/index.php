@@ -7,6 +7,9 @@ use Slim\Http\Request;
 require_once(__DIR__ . '/vendor/autoload.php');
 require_once(__DIR__ . '/log_writer.php');
 require_once('../config/config.php');
+$cutPathLog = explode('/rest', __DIR__);
+$path = $cutPathLog[0] . '/config/core.php';
+require_once($path);
 
 $cutPathLog = explode('/src', __DIR__);
 $path = $cutPathLog[0] . '/logs/server_error.log';
@@ -50,6 +53,7 @@ $app->add(function($req, $res, $next){
 });
 
 require_once(__DIR__ . '/WS/user.php');
+require_once(__DIR__ . '/WS/login.php');
 
 $app->run();
 
