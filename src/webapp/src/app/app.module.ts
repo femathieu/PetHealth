@@ -12,6 +12,7 @@ import { HttpMiddleware } from './http_middleware';
 import { RegisterComponent } from './register/register.component';
 import { HeaderOverviewComponent } from './header-overview/header-overview.component';
 import { HeaderLoginComponent } from './header-login/header-login.component';
+import { CreatePetComponent } from './create-pet/create-pet.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeaderLoginComponent } from './header-login/header-login.component';
     HomeComponent,
     RegisterComponent,
     HeaderOverviewComponent,
-    HeaderLoginComponent
+    HeaderLoginComponent,
+    CreatePetComponent
   ],
   imports: [
     BrowserModule,
