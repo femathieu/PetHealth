@@ -1,0 +1,43 @@
+// ---------------------------------------------------------
+// Form
+// 1 - Input : class form-control
+// 2 - Valid / Invalid feedback
+// ---------------------------------------------------------
+
+form{
+    text-align: center;
+}
+
+// ------------------------------------------------
+// 1 - Input : class form-control
+// ------------------------------------------------
+
+.form-control{
+    background-color: $formGrey;
+    border: none;
+    @include border;
+    padding: 1.5rem 2rem;
+    &::placeholder{
+        color: $lightGrey;
+    }
+    &:focus{
+        border-color: $darkBlue;
+        box-shadow: 0 0 0 0.2rem rgba(20, 176, 182, .3);
+    }
+    &.is-invalid{
+        border-color: $pink;
+        box-shadow: 0 0 0 0.2rem rgba(255, 0, 119, .3);
+    }
+}
+
+// ------------------------------------------------
+// 2 - Valid / Invalid feedback
+// ------------------------------------------------
+
+.is-valid{
+    color: $lightGreen;
+}
+
+.invalid-feedback{
+    color: $pink;
+}

@@ -1,0 +1,54 @@
+// ---------------------------------------------------------
+// Buttons
+// ---------------------------------------------------------
+
+.btn-primary{
+    @include gradient;
+    @include shadow;
+    @include border;
+    border-color: transparent;
+    padding: .75rem 2rem;
+    color: white;
+    font-family: $muli;
+    margin: .5rem auto;
+    width: fit-content;
+}
+
+.btn-secondary{
+    @include border;
+    border-color: $darkBlue;
+    background-color: transparent;
+    color: $darkBlue;
+    font-family: $muli;
+    margin: .5rem auto;
+    width: fit-content;
+    padding: .75rem 2rem;
+}
+
+.btn-square{
+    @extend .btn-primary;
+    width: 50px;
+    height: 50px;
+}
+
+.btn-update{
+    background-image: url("/assets/svg/update.svg");
+    background-color: $lightGreen;
+    width: 25px;
+    height: 25px;
+}
+
+.btn-delete{
+    background-image: url("/assets/svg/delete.svg");
+    background-color: $pink;
+    width: 25px;
+    height: 25px;
+}
+
+.btn-more{
+    background-image: url("/assets/svg/more.svg");
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}

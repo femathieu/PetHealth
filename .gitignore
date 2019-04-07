@@ -1,2 +1,4 @@
-src/vendor/
+src/rest/vendor/*
+logs/
 src/webapp/node_modules/
+src/webapp/package-lock.json
