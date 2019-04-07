@@ -85,7 +85,7 @@ class UserDao extends Db {
         $result = array();
         if($this->validEmail($email)){
             $emailQuoted = $this->db()->quote($email);
-            $sql = "SELECT uuid, name, firstname, email, rec_st FROM user WHERE email = $emailQuoted";
+            $sql = "SELECT uuid, name, firstname, email, rec_st FROM user WHERE email = $emailQuoted AND rec_st != 'D'";
             $query = $this->db()->query($sql);
             $result = $query->fetch(PDO::FETCH_ASSOC);
         }else{
@@ -105,7 +105,7 @@ class UserDao extends Db {
         $result = array();
         
         $emailQuoted = $this->db()->quote($email);
-        $sql = "SELECT uuid, name, firstname, email, passwd, rec_st FROM user WHERE email = $emailQuoted";
+        $sql = "SELECT uuid, name, firstname, email, passwd, rec_st FROM user WHERE email = $emailQuoted AND rec_st != 'D'";
         $query = $this->db()->query($sql);
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
         
@@ -121,7 +121,7 @@ class UserDao extends Db {
         $this->app->logger->addInfo('UserDao->getUser');
         $result = array();
         $quotedUuid = $this->db()->quote($uuid);
-        $sql = "SELECT uuid, firstname, name, email, rec_st, role FROM user WHERE uuid=$quotedUuid";
+        $sql = "SELECT uuid, firstname, name, email, rec_st, role FROM user WHERE uuid=$quotedUuid AND rec_st != 'D'";
         $query = $this->db()->query($sql);
         $result = $query->fetch(PDO::FETCH_ASSOC);
 
@@ -142,7 +142,8 @@ class UserDao extends Db {
                                 name = ?,
                                 firstname = ?,
                                 email = ?,
-                                passwd = ?
+                                passwd = ?,
+                                rec_st = ?
                 WHERE uuid = $quotedUuid
         ";
         
@@ -160,10 +161,15 @@ class UserDao extends Db {
                     $isEmailValid = false;
                     $this->app->logger->addInfo('invalid email');
                 }
+            }else{
+                $isEmailValid = true;
             }
-            if(($user['passwd'] && $user['passwdv']) && $isEmailValid){
+            if(($user['passwd'] == $user['passwdv']) && $isEmailValid){
                 unset($user['passwdv']);
                 unset($user['uuid']);
+                $user['passwd'] = password_hash($user['passwd'], PASSWORD_BCRYPT);
+                $user['rec_st'] = 'U';
+                
                 $query = $this->db()->prepare($sql);
                 $ret = $query->execute(array_values($user));
             }{

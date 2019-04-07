@@ -47,7 +47,7 @@ $app->post('/user/add', function(Request $req, Response $res, array $args){
 
 /**
  * update a user with the given user
- * model body : {name, email, firstname, passwd, passwdv}
+ * model body : {name, email, firstname, passwd, passwdv, rec_st}
  */
 $app->put('/user/{uuid}', function(Request $req, Response $res, array $args){
     $userCtrl = new UserController($this);
@@ -58,7 +58,7 @@ $app->put('/user/{uuid}', function(Request $req, Response $res, array $args){
                 $params['uuid'] = $args['uuid'];
                 $ret = $userCtrl->update($args['uuid'], $params);
                 if($ret){
-                    return $res->withJson("user :".$args['uuid']." updated", 200);
+                    return $res->withJson(generateToken($this->get('configToken'), $userCtrl->getUser($args['uuid'])), 200);
                 }else{
                     return $res->withStatus(400);
                 }
