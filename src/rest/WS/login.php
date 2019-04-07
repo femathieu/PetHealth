@@ -2,6 +2,7 @@
 use Slim\Http\Response;
 use Slim\Http\Request;
 use \Controller\LoginController;
+use Controller\UserController;
 
 /**
  * log user if user successfully loged return user
@@ -9,6 +10,7 @@ use \Controller\LoginController;
  */
 $app->post('/login', function(Request $req, Response $res, array $args){
     $ctrl = new LoginController($this);
+    $userCtrl = new UserController($this);
     $params = json_decode($req->getBody(), true);
     $login = $ctrl->login($params['email'], $params['passwd']);
     $result = false;
@@ -31,7 +33,8 @@ $app->post('/login', function(Request $req, Response $res, array $args){
     }
     $response = array("result" => $result, "msg" => $msg);
     if($result){
-        $response["token"] = generateToken($this->get('configToken'), $login);
+        $user = $userCtrl->getUserByEmail($params['email']);
+        $response["token"] = generateToken($this->get('configToken'), $user);
         echo json_encode($response);
     }else{
         return $res->withJson($response, 400);

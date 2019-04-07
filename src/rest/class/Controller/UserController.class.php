@@ -34,6 +34,14 @@ class UserController {
     }
 
     /**
+     * Retreive a user from his uuid
+     * @param: $uuid the uuid of the user we're looking for
+     */
+    public function getUser($uuid){
+        return $this->dao->getUser($uuid);
+    }
+
+    /**
      * return true if passwd is valid
      * @param: $passwd password
      * @param: $passwdv repeat password
@@ -60,4 +68,13 @@ class UserController {
         return $bret;
     }
 
+    /**
+     * update a user
+     * @param: $uuid uuid of user to update
+     * @param: $user new data
+     */
+    public function update($uuid, $user){
+        $this->app->logger->addInfo('UserController->update');
+        return $this->dao->update($uuid, $user);
+    }
 }

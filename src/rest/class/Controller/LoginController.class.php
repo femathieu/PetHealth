@@ -18,8 +18,7 @@ class LoginController {
     }
 
     /**
-     * return array $user with data of requested user
-     * if incorrect id return empty array
+     * return clas const
      * @param: $email email of logger
      * @param: $passwd password of logger
      */
@@ -28,8 +27,9 @@ class LoginController {
         $user = array();
         $ret = null;
         if($email != "" && $passwd != ""){
-            $user = $this->userDao->login($email);
-            if($user){
+            $users = $this->userDao->login($email);
+            $user = $users[0];
+            if(!empty($user)){
                 if($user['rec_st'] != 'D'){
                     if(\password_verify($passwd, $user['passwd'])){
                         unset($user['passwd']);
