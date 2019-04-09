@@ -7,6 +7,9 @@ use Slim\Http\Request;
 require_once(__DIR__ . '/vendor/autoload.php');
 require_once(__DIR__ . '/log_writer.php');
 require_once('../config/config.php');
+$cutPathLog = explode('/rest', __DIR__);
+$path = $cutPathLog[0] . '/config/core.php';
+require_once($path);
 
 $cutPathLog = explode('/src', __DIR__);
 $path = $cutPathLog[0] . '/logs/server_error.log';
@@ -41,15 +44,16 @@ $container['logger'] = function($c) {
 $app->getContainer()->logger->addInfo('start session');
 
 $app->add(function($req, $res, $next){
-    $next($req, $res);
+    $res = $next($req, $res);
     return $res
-            ->withHeader('Access-Control-Allow-Origin', 'http://localhost:4200')
-            ->withHeader('Content-Type', 'application/json; charset=UTF-8')
-            ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With')
-            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+        ->withHeader('Access-Control-Allow-Origin', 'http://localhost')
+        ->withHeader('Content-Type', 'application/json; charset=UTF-8')
+        ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With')
+        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
 });
 
 require_once(__DIR__ . '/WS/user.php');
+require_once(__DIR__ . '/WS/login.php');
 
 $app->run();
 

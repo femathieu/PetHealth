@@ -31,7 +31,7 @@ class UserDao extends Db {
             isset($data['passwdv']) && !empty(['passwdv'])
         ){
             if($data['passwd'] == $data['passwdv']){
-                if(!$this->validEmail($data['email'])){
+                if($this->validEmail($data['email']) && empty($this->getUserByEmail($data['email']))){
                     $sql = "INSERT INTO user ( uuid, 
                                                name, 
                                                firstname, 
@@ -54,6 +54,8 @@ class UserDao extends Db {
                         ":passwd" => password_hash($data['passwd'], PASSWORD_BCRYPT)
                     ));
                 }
+            }else{
+                $this->app->logger->addInfo('password doesn\'t match');
             }
         }else{
             $this->app->logger->addInfo('missing field in $data');
@@ -65,21 +67,10 @@ class UserDao extends Db {
      * Check if the given $email is valid - if it exists in the db and if it have correct syntax
      * @param: $email - target
      */
-    private function validEmail($email){
-        $result = array();
+    public function validEmail($email){
         $ret = false;
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-            $sql = "SELECT uuid FROM user WHERE email = :email";
-            $query = $this->db()->prepare($sql);
-            $query->execute(array(
-                ':email' => $email
-            ));
-            $result = $query->fetch(PDO::FETCH_ASSOC);
-        }
-        if(isset($result['uuid'])){
             $ret = true;
-        }else{
-            $this->app->logger->addInfo('user '.$email.' does not exists');
         }
         return $ret;
     }
@@ -94,11 +85,11 @@ class UserDao extends Db {
         $result = array();
         if($this->validEmail($email)){
             $emailQuoted = $this->db()->quote($email);
-            $sql = "SELECT uuid, name, firstname, email, rec_st FROM user WHERE email = $emailQuoted";
+            $sql = "SELECT uuid, name, firstname, email, rec_st FROM user WHERE email = $emailQuoted AND rec_st != 'D'";
             $query = $this->db()->query($sql);
             $result = $query->fetch(PDO::FETCH_ASSOC);
         }else{
-            $this->app->logger->addInfo("email : $email is invalid");
+            $this->app->logger->addInfo("email : $email is not valid");
         }
         
         return $result;
@@ -112,15 +103,82 @@ class UserDao extends Db {
     public function login($email){
         $this->app->logger->addInfo('UserDao->getUserByEmail');
         $result = array();
-        if($this->validEmail($email)){
-            $emailQuoted = $this->db()->quote($email);
-            $sql = "SELECT uuid, name, firstname, email, passwd, rec_st FROM user WHERE email = $emailQuoted";
-            $query = $this->db()->query($sql);
-            $result = $query->fetch(PDO::FETCH_ASSOC);
-        }else{
-            $this->app->logger->addInfo("email : $email is invalid");
-        }
+        
+        $emailQuoted = $this->db()->quote($email);
+        $sql = "SELECT uuid, name, firstname, email, passwd, rec_st FROM user WHERE email = $emailQuoted AND rec_st != 'D'";
+        $query = $this->db()->query($sql);
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
         
         return $result;
+    }
+
+    /**
+     * Retreive user from his uuid
+     * @param: $uuid the uuid of the user we're looking for
+     * return null array if no user found
+     */
+    public function getUser($uuid){
+        $this->app->logger->addInfo('UserDao->getUser');
+        $result = array();
+        $quotedUuid = $this->db()->quote($uuid);
+        $sql = "SELECT uuid, firstname, name, email, rec_st, role FROM user WHERE uuid=$quotedUuid AND rec_st != 'D'";
+        $query = $this->db()->query($sql);
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+    /**
+     * update a user
+     * @param: $uuid uuid of the user to update
+     * @param: $user new data
+     */
+    public function update($uuid, $user){
+        $this->app->logger->addInfo('UserDao->update'.$user['uuid']);
+        $quotedUuid = $this->db()->quote($uuid);
+        $ret = false;
+
+        $sql = "UPDATE user SET 
+                                name = ?,
+                                firstname = ?,
+                                email = ?,
+                                passwd = ?,
+                                rec_st = ?
+                WHERE uuid = $quotedUuid
+        ";
+        
+        $isEmailValid = false;
+        ///Check if email syntax is ok
+        if($this->validEmail($user['email'])){
+            $u = $this->getUserByEmail($user['email']);
+            ///If user found for given email
+            if(!empty($u)){
+                ///If email already exists check if the uuid match
+                ///if it does it means the user is trying to update his profile
+                if($u['uuid'] == $user['uuid']){
+                    $isEmailValid = true;
+                }else{
+                    $isEmailValid = false;
+                    $this->app->logger->addInfo('invalid email');
+                }
+            }else{
+                $isEmailValid = true;
+            }
+            if(($user['passwd'] == $user['passwdv']) && $isEmailValid){
+                unset($user['passwdv']);
+                unset($user['uuid']);
+                $user['passwd'] = password_hash($user['passwd'], PASSWORD_BCRYPT);
+                $user['rec_st'] = 'U';
+                
+                $query = $this->db()->prepare($sql);
+                $ret = $query->execute(array_values($user));
+            }{
+                $this->app->logger->addInfo('invalid passwd');
+            }
+        }else{
+            $this->app->logger->addInfo('invalid email');
+        }
+        
+        return $ret;
     }
 }
