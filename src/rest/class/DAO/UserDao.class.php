@@ -85,7 +85,7 @@ class UserDao extends Db {
         $result = array();
         if($this->validEmail($email)){
             $emailQuoted = $this->db()->quote($email);
-            $sql = "SELECT uuid, name, firstname, email, rec_st FROM user WHERE email = $emailQuoted AND rec_st != 'D'";
+            $sql = "SELECT uuid, name, firstname, email, rec_st, role FROM user WHERE email = $emailQuoted AND rec_st != 'D'";
             $query = $this->db()->query($sql);
             $result = $query->fetch(PDO::FETCH_ASSOC);
         }else{
@@ -105,7 +105,7 @@ class UserDao extends Db {
         $result = array();
         
         $emailQuoted = $this->db()->quote($email);
-        $sql = "SELECT uuid, name, firstname, email, passwd, rec_st FROM user WHERE email = $emailQuoted AND rec_st != 'D'";
+        $sql = "SELECT uuid, name, firstname, email, passwd, rec_st, role FROM user WHERE email = $emailQuoted AND rec_st != 'D'";
         $query = $this->db()->query($sql);
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
         
@@ -180,5 +180,27 @@ class UserDao extends Db {
         }
         
         return $ret;
+    }
+
+    /**
+     * Mark a user as deleted
+     * @param: $uuid - uuid of the user to set as deleted
+     */
+    public function markAsDeleted($uuid){
+        $this->app->logger->addInfo('UserDao->markAsDeleted');
+        $uuidQuoted = $this->db()->quote($uuid);
+        $sql = "UPDATE user SET rec_st = 'D' WHERE uuid = $uuidQuoted";
+        return $this->db()->query($sql);
+    }
+
+    /**
+     * Delete a user
+     * @param: $uuid - uuid of the user to delete
+     */
+    public function delete($uuid){
+        $this->app->logger->addInfo('UserDao->Delete');
+        $uuidQuoted = $this->db()->quote($uuid);
+        $sql = "DELETE FROM user WHERE uuid = $uuidQuoted";
+        return $this->db()->query($sql);
     }
 }

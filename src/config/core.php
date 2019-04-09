@@ -23,7 +23,8 @@ function generateToken($configToken, $user){
                     "uuid" => $user["uuid"],
                     "firstname" => $user["firstname"],
                     "lastname" => $user["name"],
-                    "email" => $user["email"]
+                    "email" => $user["email"],
+                    "role" => $user["role"]
                     )
                 );
             $jwt = JWT::encode($token, $configToken['key']);
