@@ -1,0 +1,15 @@
+pour démarrer les containers utiliser la commande docker-compose up -d +
+lors de la première installation, cela prendra un peu plus de temps car toutes les images doivent être pull + 
+une fois que cela est fait vérifier que les service **nginx** et **php7.2-fpm** sont en route dans le container webapp
+
+- service nginx status
+- service php7.2-fpm status
+
+si ce n'est pas le cas, les démarrer en utilisant les commandes suivantes : 
+
+- service nginx start
+- service php7.2-fpm start
+
+
+installer ensuite les dépendances dans src/rest +
+**composer install**

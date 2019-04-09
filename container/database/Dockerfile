@@ -11,4 +11,6 @@ COPY ./container/database/db.sql /
 COPY ./container/database/pethealth.sql /
 COPY ./container/database/start.sh /
 
-CMD ["/bin/bash", "/start.sh"]
+RUN sed -i 's/\r$//' /start.sh
+
+ CMD ["/bin/bash", "/start.sh"]

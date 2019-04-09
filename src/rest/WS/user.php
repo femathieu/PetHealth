@@ -3,73 +3,72 @@ use Slim\Http\Response;
 use Slim\Http\Request;
 use \Controller\UserController;
 
-$cutPathLog = explode('/rest', __DIR__);
-$path = $cutPathLog[0] . '/config/core.php';
-require_once($path);
-
 /**
  * Get the list of all user
  * @todo : RESTRICT THIS ROUTE FOR ADMIN
  */
-$app->get('/user/list/{token}', function(Request $request, Response $response, array $args) use ($app){
+$app->get('/user/{email}/{uuid}', function(Request $request, Response $response, array $args){
     $this->logger->addInfo('ws -> test');
     $ctrl = new UserController($this);
+    $ret = array();
     if(validToken($this)){
-        echo json_encode($ctrl->getUserList());
+        if($args['email'] == 'all' && $args['uuid'] == 'all'){
+            $ret =$ctrl->getUserList();
+        }
+        echo json_encode($ret);
     }else{
-        $app->halt(403);
+        return $response->withStatus(401);
     }
 });
 
 /**
  * Add new user in db
- * model body : {name, email, firstname, password, passwordv}
+ * model body : {name, email, firstname, passwd, passwdv}
  */
 $app->post('/user/add', function(Request $req, Response $res, array $args){
     $ctrl = new UserController($this);
     $params = json_decode($req->getBody(), true);
-    echo json_encode(array("result" => $ctrl->add($params)));
+    $bparamsValid = false;
+    $msg = "";
+    if($ctrl->isPasswdValid($params['passwd'], $params['passwdv'])){
+        if($ctrl->isEmailValid($params['email'])){
+            $ctrl->add($params);
+            $bparamsValid = true;
+        }else{
+            $msg = "invalid email";
+        }
+    }else{
+        $msg = "invalid password";
+    }
+    if(!$bparamsValid){
+        return $res->withJson($msg, 400);
+    }
 });
 
 /**
- * log user if user successfully loged return user
- * model body : {email, passwd}
+ * update a user with the given user
+ * model body : {name, email, firstname, passwd, passwdv, rec_st}
  */
-$app->post('/user/login', function(Request $req, Response $res, array $args){
-    $ctrl = new UserController($this);
+$app->put('/user/{uuid}', function(Request $req, Response $res, array $args){
+    $userCtrl = new UserController($this);
     $params = json_decode($req->getBody(), true);
-    $login = $ctrl->login($params);
-    $result = false;
-    $msg = null;
-    if($login == $ctrl::CORRECT_IDS){
-        $result = true;
-    }else{
-        $result = false;
-        switch($login){
-            case $ctrl::INVALID_IDS:
-                $msg = "missing email or passwd";
-                break;
-            case $ctrl::INVALID_EMAIL:
-                $msg = "incorrect email";
-                break;
-            case $ctrl::INVALID_PASSWD:
-                $msg = "incorrect passwd";
-                break;
-        }
-    }
-    $response = array("result" => $result, "msg" => $msg);
-    if($result){
-        $user = $ctrl->getUserByEmail($params['email']);
-        $response["token"] = generateToken($this->get('configToken'), $user);
-    }
-    echo json_encode($response);
-});
-
-$app->get('/user/{email}', function(Request $req, Response $res, array $args) use ($app){
     if(validToken($this)){
-        $ctrl = new UserController($this);
-        echo json_encode($ctrl->getUserByEmail($args['email']));
+        if(decodeToken($this)['uuid'] == $args['uuid']){
+            if(!empty($userCtrl->getUser($args['uuid']))){
+                $params['uuid'] = $args['uuid'];
+                $ret = $userCtrl->update($args['uuid'], $params);
+                if($ret){
+                    return $res->withJson(generateToken($this->get('configToken'), $userCtrl->getUser($args['uuid'])), 200);
+                }else{
+                    return $res->withStatus(400);
+                }
+            }else{
+                return $res->withJson("no user found for id :".$args['uuid'], 400);
+            }
+        }else{
+            return $res->withJson("id doesn't match", 401);
+        }
     }else{
-        $app->halt(403);
+        return $res->withStatus(401);
     }
 });
