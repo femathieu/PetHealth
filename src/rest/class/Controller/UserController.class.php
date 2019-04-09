@@ -77,4 +77,22 @@ class UserController {
         $this->app->logger->addInfo('UserController->update');
         return $this->dao->update($uuid, $user);
     }
+
+    /**
+     * mark a user as deleted
+     * @param: $uuid - uuid of the user to mark as deleted
+     */
+    public function markAsDeleted($uuid){
+        $this->app->logger->addInfo('UserController->MarkAsDeleted');
+        return $this->dao->markAsDeleted($uuid);
+    }
+
+    /**
+     * delete user
+     * @param: $uuid - uuid of the user to delete
+     */
+    public function delete($uuid){
+        $this->app->logger->addInfo('UserController->delete');
+        return $this->dao->delete($uuid);
+    }
 }
