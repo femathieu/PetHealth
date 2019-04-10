@@ -1,4 +1,4 @@
-version: '3'
+version: '3.3'
 
 services:
   webapp:
@@ -10,8 +10,8 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./src:/var/www/html
-      - ./logs:/var/www/html
+      - ./src:/var/www/html/src
+      - ./logs:/var/www/html/logs
       - ./container/webapp/default:/etc/nginx/sites-available/default
     links:
       - database

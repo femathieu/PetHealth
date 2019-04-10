@@ -11,6 +11,9 @@ Aucuns commentaires de docs doivent être trouvés dans les fichiers sources
 - Privilégiez la création de fichier pour la doc concernant les différenes parties du code + 
     ajouter un fichier à l'index via l'indication : **include::pathToFile[]**
 
+== Containers
+include::containers.adoc[]
+
 == Coding Rules
 include::coding_rules.adoc[]
 

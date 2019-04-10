@@ -1,7 +1,10 @@
 #!/bin/sh
 
-service php7.2-fpm start
+mkdir /var/www/html/logs
 
+chgrp -R www-data /var/www
+
+service php7.2-fpm start
 service nginx start
 
-tail -f /var/www/html/index.php
+tail -f /start.sh
