@@ -1,0 +1,198 @@
+// ---------------------------------------------------------
+// Forms
+// 1 - Input : class form-control
+// 2 - Radioboxes : class radio-%%
+// 3 - Valid / Invalid feedback
+// 4 - Reset : MaterialAngular formUI
+// ---------------------------------------------------------
+
+form{
+    text-align: center;
+}
+
+.content-btn-validation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// ------------------------------------------------
+// 1 - Input : class form-control
+// ------------------------------------------------
+
+.form-control{
+    background-color: $formGrey !important;
+    border: none;
+    @include border;
+    padding: 1.5rem 2rem !important;
+    &::placeholder{
+        color: $lightGrey;
+    }
+    &:focus{
+        border-color: $darkBlue;
+        box-shadow: 0 0 0 0.2rem rgba(20, 176, 182, .3);
+    }
+    &.is-invalid{
+        border-color: $pink;
+        box-shadow: 0 0 0 0.2rem rgba(255, 0, 119, .3);
+    }
+}
+
+
+// ------------------------------------------------
+// 2 - Radioboxes : class radio-%%
+// ------------------------------------------------
+
+.radio-group{
+    display: flex;
+    flex-wrap: wrap;
+    .form-group{
+        width: 33%;
+        &:nth-child(1), &:nth-child(2){
+            width: 50%;
+        }
+    }
+}
+
+// If radio-before : display before with square shape
+.mat-radio-label-content{
+    @extend .main-title;
+    cursor: pointer;
+    font-size: 	1.5rem;
+    position: relative;
+    padding-left: 0 !important;
+    &:before{
+        content: "";
+        @include shadow;
+        display: flex;
+        width: 65px;
+        height: 65px;
+        border-radius: 15px;
+        background: $gradient;
+        padding: .5rem;
+        margin-bottom: 1rem;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        width: 65px;
+        height: 65px;
+        display: flex;
+        background-size: contain;
+    }
+}
+
+.mat-radio-button{
+    &.radio-cat{
+        .mat-radio-label-content{
+            &:after{
+                background: url("/assets/svg/cat.svg") center no-repeat;
+            }
+        }
+    }
+    &.radio-dog{
+        .mat-radio-label-content{
+            &:after{
+                background: url("/assets/svg/dog.svg") center no-repeat;
+            }
+        }
+    }
+    &.radio-rodent{
+        .mat-radio-label-content{
+            &:after{
+                background: url("/assets/svg/rodent.svg") center no-repeat;
+            }
+        }
+    }
+    &.radio-bird{
+        .mat-radio-label-content{
+            &:after{
+                background: url("/assets/svg/bird.svg") center no-repeat;
+            }
+        }
+    }
+    &.radio-other{
+        .mat-radio-label-content{
+            &:after{
+                background: url("/assets/svg/other.svg") center no-repeat;
+            }
+        }
+    }
+}
+
+// If input is checked display green color
+.mat-radio-checked{
+    .mat-radio-label-content{
+        color: $lightGreen;
+        &:before{
+            background: $lightGreen;
+        }
+    }
+}
+
+// ------------------------------------------------
+// 3 - Valid / Invalid feedback
+// ------------------------------------------------
+
+.is-valid{
+    color: $lightGreen;
+}
+
+.invalid-feedback{
+    color: $pink;
+}
+
+// ------------------------------------------------
+// 4 - Reset : MaterialAngular formUI
+// ------------------------------------------------
+
+.mat-radio-container{
+    display: none !important;
+}
+
+.mat-horizontal-stepper-header-container{
+    display: none !important;
+}
+
+.mat-horizontal-content-container{
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.mat-form-field-infix{
+    width: 100% !important;
+    border-top: none !important;
+}
+
+.mat-form-field-underline{
+    display: none !important;
+}
+
+.mat-form-field-label-wrapper{
+    top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.mat-form-field-label{
+    padding-left: 1rem !important;
+    top: 35% !important;
+}
+
+.mat-focused{
+    .mat-form-field-label{
+        display: none !important;
+    }
+}
+
+.mat-form-field-suffix{
+    position: absolute !important;
+    right: 10%;
+    top: 23%;
+}
+
+.mat-form-field-flex{
+    display: block !important;
+}

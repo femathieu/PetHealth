@@ -1,0 +1,77 @@
+  <!-- <main class="block-main block-main-crud-pet block-main-create-pet py-5 px-2">
+ https://material.angular.io/components/stepper/overview#using-a-single-form 
+
+  <form class="form-create-pet">
+    <div id="step1" class="radio-group">
+        
+         https://material.angular.io/components/radio/overview
+        <div class="form-group">
+            <input type="radio" name="cat" value="cat" id="inputCat">
+            <label for="inputCat" class="radio-before radio-cat">Chat</label>
+        </div>
+        <div class="form-group">
+            <input type="radio" name="dog" value="dog" id="inputDog">
+            <label for="inputDog" class="radio-before radio-dog">Chien</label>
+        </div>
+        <div class="form-group">
+            <input type="radio" name="rodent" value="rodent" id="inputRodent">
+            <label for="inputRodent" class="radio-before radio-rodent">Rongeur</label>
+        </div>
+        <div class="form-group">
+            <input type="radio" name="bird" id="inputBird">
+            <label for="inputBird" class="radio-before radio-bird">Oiseau</label>
+        </div>
+        <div class="form-group">
+            <input type="radio" name="other" id="inputOther">
+            <label for="inputOther" class="radio-before radio-other">Autres</label>
+        </div>
+    </div>
+    <div id="step2">
+      <h2 class="main-title">Identité de l'animal</h2>
+      <div class="form-group">
+        <input type="text" placeholder="Prénom de votre animal" class="form-control">
+      </div>
+      <h2 class="main-title">Date de naissance</h2>
+      <div class="form-group">
+        <input type="text" placeholder="Date de naissance" class="form-control">
+      </div>
+    </div>
+    <button class="btn btn-primary">valider</button>
+  </form>
+
+</main> -->
+
+<!-- https://material.angular.io/components/dialog/overview -->
+
+<!-- If form is valid 
+
+<mat-dialog-content>Are you sure?</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+ The mat-dialog-close directive optionally accepts a value as a result for the dialog.
+  <button mat-button [mat-dialog-close]="true">Yes</button>
+</mat-dialog-actions>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+-->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="54.876" height="48.006" viewBox="0 0 54.876 48.006"><g transform="translate(-157 -211)"><g transform="translate(2 11)"><path d="M14,0H34.006a14,14,0,0,1,14,14V34.006a14,14,0,0,1-14,14H14a14,14,0,0,1-14-14V14A14,14,0,0,1,14,0Z" transform="translate(155 200)" fill="#e7e7e7"/><g transform="translate(164.125 200)"><path d="M1.437,24.15c-3.307-2.785,1.218-4,3.307-3.481A20.113,20.113,0,0,1,12.4,23.976c2.959,2.088,6.091-1.392,7.831-3.481A124.976,124.976,0,0,1,40.42,1.178c4.873-3.481,7.831,0,3.481,3.655A124.556,124.556,0,0,0,18.84,33.026c-1.044,1.392-2.262,2.959-3.829,2.436C13.967,35.114,3,25.542,1.437,24.15Z" transform="translate(-0.265 0.259)" fill="#b6e267" fill-rule="evenodd"/></g></g></g></svg>
+        </div>
+        <div class="modal-body">
+          <div class="main-title">Le carnet de santé est prêt !</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Ajouter des informations</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Revenir à l'accueil</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <pet-crud></pet-crud>
