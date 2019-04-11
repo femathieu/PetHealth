@@ -58,9 +58,9 @@ CREATE TABLE IF NOT EXISTS `pethealth`.`recall_time` (
 ENGINE = InnoDB;
 
 
------------------------------------------------------
-Table `pethealth`.`vaccine`
------------------------------------------------------
+-- -----------------------------------------------------
+-- Table `pethealth`.`vaccine`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pethealth`.`vaccine` (
   `uuid` VARCHAR(36) NOT NULL,
   `label` VARCHAR(45) NULL,
@@ -76,9 +76,9 @@ CREATE TABLE IF NOT EXISTS `pethealth`.`vaccine` (
 ENGINE = InnoDB;
 
 
------------------------------------------------------
-Table `pethealth`.`pet_type`
------------------------------------------------------
+-- -----------------------------------------------------
+-- Table `pethealth`.`pet_type`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pethealth`.`pet_type` (
   `uuid` VARCHAR(36) NOT NULL,
   `label` VARCHAR(45) NULL,
@@ -94,9 +94,9 @@ CREATE TABLE IF NOT EXISTS `pethealth`.`pet_type` (
 ENGINE = InnoDB;
 
 
------------------------------------------------------
-Table `pethealth`.`pet`
------------------------------------------------------
+-- -----------------------------------------------------
+-- Table `pethealth`.`pet`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pethealth`.`pet` (
   `uuid` VARCHAR(36) NOT NULL,
   `name` VARCHAR(45) NOT NULL,
@@ -129,9 +129,9 @@ CREATE TABLE IF NOT EXISTS `pethealth`.`pet` (
 ENGINE = InnoDB;
 
 
------------------------------------------------------
-Table `pethealth`.`health_book_main`
------------------------------------------------------
+-- -----------------------------------------------------
+-- Table `pethealth`.`health_book_main`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pethealth`.`health_book_main` (
   `uuid` VARCHAR(36) NOT NULL,
   `pet_id` VARCHAR(36) NOT NULL,
@@ -148,9 +148,9 @@ CREATE TABLE IF NOT EXISTS `pethealth`.`health_book_main` (
 ENGINE = InnoDB;
 
 
------------------------------------------------------
-Table `pethealth`.`pest_control`
------------------------------------------------------
+-- -----------------------------------------------------
+-- Table `pethealth`.`pest_control`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pethealth`.`pest_control` (
   `uuid` VARCHAR(36) NOT NULL,
   `label` VARCHAR(45) NULL,
@@ -166,9 +166,9 @@ CREATE TABLE IF NOT EXISTS `pethealth`.`pest_control` (
 ENGINE = InnoDB;
 
 
------------------------------------------------------
-Table `pethealth`.`health_book_detail`
------------------------------------------------------
+-- -----------------------------------------------------
+-- Table `pethealth`.`health_book_detail`
+-- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pethealth`.`health_book_detail` (
   `uuid` VARCHAR(36) NOT NULL,
   `health_book_main_id` VARCHAR(36) NOT NULL,
