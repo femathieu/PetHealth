@@ -1,0 +1,12 @@
+
+<h1>Pet component</h1>
+
+<nav mat-tab-nav-bar [ngClass]="'navbar'">
+  <a  mat-tab-link routerLinkActive routerLink="/pet/main" [ngClass]="'nav-link'">Suivi</a>
+  <a mat-tab-link routerLinkActive routerLink="/pet/profil" [ngClass]="'nav-link'">Profile</a>
+  <a mat-tab-link routerLinkActive routerLink="/pet/healthbook" [ngClass]="'nav-link'">Carnet de santé</a>
+</nav>
+
+<div [@routerTransition]="getState(outlet)" >
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>
