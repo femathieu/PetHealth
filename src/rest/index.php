@@ -54,6 +54,7 @@ $app->add(function($req, $res, $next){
 
 require_once(__DIR__ . '/WS/user.php');
 require_once(__DIR__ . '/WS/login.php');
+require_once(__DIR__ . '/WS/pet.php');
 
 $app->run();
 
