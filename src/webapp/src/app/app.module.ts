@@ -12,7 +12,10 @@ import { HttpMiddleware } from './http_middleware';
 import { RegisterComponent } from './register/register.component';
 import { HeaderOverviewComponent } from './header-overview/header-overview.component';
 import { HeaderLoginComponent } from './header-login/header-login.component';
-import { CreatePetComponent } from './create-pet/create-pet.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
+import { PetModule } from './pet/pet.module';
+
 
 @NgModule({
   declarations: [
@@ -22,14 +25,16 @@ import { CreatePetComponent } from './create-pet/create-pet.component';
     RegisterComponent,
     HeaderOverviewComponent,
     HeaderLoginComponent,
-    CreatePetComponent
   ],
   imports: [
     BrowserModule,
+    PetModule,
     AppRoutingModule,
     FormsModule,
     NgbModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [
     {
