@@ -25,7 +25,7 @@ $app->get('/user/{email}/{uuid}', function(Request $request, Response $response,
  * Add new user in db
  * model body : {name, email, firstname, passwd, passwdv}
  */
-$app->post('/user/add', function(Request $req, Response $res, array $args){
+$app->post('/user', function(Request $req, Response $res, array $args){
     $ctrl = new UserController($this);
     $params = json_decode($req->getBody(), true);
     $bparamsValid = false;
@@ -67,6 +67,53 @@ $app->put('/user/{uuid}', function(Request $req, Response $res, array $args){
             }
         }else{
             return $res->withJson("id doesn't match", 401);
+        }
+    }else{
+        return $res->withStatus(401);
+    }
+});
+
+/**
+ * Mark a user as deleted
+ * @param: uuid - the uuid of the user to update
+ */
+$app->put('/user/delete/{uuid}', function (Request $req, Response $res, array $args){
+    $userCtrl = new UserController($this);
+    if(validToken($this)){
+        if(decodeToken($this)["uuid"] == $args["uuid"] || decodeToken($this)["role"] == "admin"){
+            if(!empty($userCtrl->getUser($args["uuid"]))){
+                $ret = $userCtrl->markAsDeleted($args["uuid"]);
+                if($ret){
+                    return $res->withStatus(200);
+                }else{
+                    return $res->withStatus(400);
+                }
+            }else{
+                return $res->withStatus(404);
+            }
+        }else{
+            return $res->withStatus(401);
+        }
+    }else{
+        return $res->withStatus(401);
+    }
+});
+
+/**
+ * Physical delete a user
+ * @param: uuid - uuid of the user to delete
+ */
+$app->delete('/user/{uuid}', function (Request $req, Response $res, array $args){
+    $userCtrl = new UserController($this);
+    if(validToken($this)){
+        if(decodeToken($this)['role'] == "admin"){
+            if($userCtrl->delete($args['uuid'])){
+                return $res->withStatus(200);
+            }else{
+                return $res->withStatus(400);
+            }
+        }else{  
+            return $res->withStatus(401);
         }
     }else{
         return $res->withStatus(401);
