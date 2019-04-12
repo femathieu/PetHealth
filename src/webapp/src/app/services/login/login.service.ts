@@ -38,23 +38,27 @@ export class LoginService {
           console.log(response.msg)
         }
       });
-  }
-
-  register(): void {
-    this.client.post(`${this.config.getApiBaseUrl}/user/add`, this.user, this.httpOptions)
-      .pipe(
-        tap((_) => {console.log('register')}),
-        catchError(this.handleError('register', null))
-      ).subscribe((response: any) => {
-        console.log(response.result);
-      });
-  }
-
-  private handleError<T>(operation = 'operation', result?: T){
-    return (error: any): Observable<T> => {
-      console.error(error);
-      console.log(`Operation : ${operation} failed : ${error.message}`);
-      return of(result as T);
     }
+    
+  register(): Observable<any> {
+    return this.client.post('http://localhost/user', this.user, {headers: this.httpOptions.headers, observe: 'response'},)
+      .pipe(
+        tap(_ => {console.log('register')}),
+        catchError(this.handleError<User>('add user'))
+      );
+  }
+
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+ 
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+ 
+      // TODO: better job of transforming error for user consumption
+      console.log(`${operation} failed: ${error.message}`);
+ 
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
   }
 }

@@ -34,6 +34,7 @@ $app->post('/user', function(Request $req, Response $res, array $args){
         if($ctrl->isEmailValid($params['email'])){
             $ctrl->add($params);
             $bparamsValid = true;
+            return $res->withJson('success', 200);
         }else{
             $msg = "invalid email";
         }
