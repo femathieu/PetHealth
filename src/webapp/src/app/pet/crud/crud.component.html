@@ -1,8 +1,7 @@
 <main class="block-main block-main-add-pet">
     <mat-horizontal-stepper [linear]="isLinear" #stepper>
-        <h2 class="main-title">Identité de l'animal</h2>
         <mat-step [stepControl]="petFormStep1">
-            <h1 class="main-title">Ajouter un animal</h1>
+            <h1 class="main-title mb-4">Ajouter un animal</h1>
             <form [formGroup]="petFormStep1" (ngSubmit)="onSubmit()">
                 <mat-radio-group
                 aria-labelledby="example-radio-group-label"
