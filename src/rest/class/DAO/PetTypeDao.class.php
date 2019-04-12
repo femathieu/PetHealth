@@ -13,7 +13,11 @@ class PetTypeDao extends Db {
         parent::__construct();
         $this->app = $app;
     }
-
+    
+    /**
+     * Fetch a pet_type
+     * @param: $uuid - the uuid of the pet_type to fetch
+     */
     public function get($uuid){
         $this->app->logger->addInfo('PetTypeDao->get');
         $uuidQuoted = $this->db()->quote($uuid);
