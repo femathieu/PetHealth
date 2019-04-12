@@ -124,4 +124,19 @@ class PetDao extends Db {
         }
         return $ret;
     }
+
+    /**
+     * Delete a pet
+     * @param: $uuid - the uuid of the pet to delete 
+     */
+    public function delete($uuid){
+        $this->app->logger->deleteInfo('PetDao->delete');
+        $ret = null;
+        if(!empty($this->get($uuid))){
+            $uuidQuoted = $this->db()->quote($uuid);
+            $sql = "DELETE pet WHERE uuid = $uuidQuoted";
+            $ret = $this->db()->query($sql);
+        }
+        return $ret;
+    }
 }
