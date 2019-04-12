@@ -18,6 +18,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
+import { HeaderComponent } from '../header/header.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     PetProfil,
     HealthBookComponent,
     CrudComponent,
+    HeaderComponent,
+
   ],
   imports: [
     CommonModule,
@@ -40,6 +44,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatCardModule,
     ReactiveFormsModule
   ],
   providers: [

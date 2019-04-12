@@ -10,10 +10,11 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpMiddleware } from './http_middleware';
 import { RegisterComponent } from './register/register.component';
+import { HeaderComponent } from './header/header.component';
 import { HeaderOverviewComponent } from './header-overview/header-overview.component';
 import { HeaderLoginComponent } from './header-login/header-login.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatTabsModule} from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule} from '@angular/material/tabs';
 import { PetModule } from './pet/pet.module';
 
 
@@ -34,7 +35,8 @@ import { PetModule } from './pet/pet.module';
     NgbModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+
   ],
   providers: [
     {
