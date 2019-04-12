@@ -4,6 +4,7 @@ use Slim\Http\Response;
 use Slim\Http\Request;
 
 use \Controller\PetController;
+use Symfony\Component\Validator\Constraints\Uuid;
 
 /**
  * Add pet
@@ -85,4 +86,24 @@ $app->put('/pet/delete/{uuid}', function(Request $req, Response $res, array $arg
         return $res->withStatus(401);
     }
     return $ctrl->markAsDelete($args['uuid']);
+});
+
+/** 
+ * Delete pet
+ * @param: uuid - the uuid of pet to delete
+*/
+$app->delete('/pet/{uuid}', function(Request $req, Response $res, array $args){
+    $ctrl = new PetController($this);
+    if(!validToken($this)){
+        return $res->withStatus(401);
+    }
+    $pet = $ctrl->get($args['uuid']);
+    if(empty($pet)){
+        return $res->withStatus(404);
+    }
+    if(decodeToken($this)['role'] != 'admin'){
+        return $res->withStatus(401);
+    }
+    return $ctrl->delete($args['uuid']);
+
 });

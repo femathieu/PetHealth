@@ -48,4 +48,13 @@ class PetController {
         $this->app->logger->addInfo('PetController->MarkAsDelete');
         return $this->dao->markAsDelete($uuid);
     }
+
+    /**
+     * delete a pet
+     * @param: $uuid - the uuid of the pet to delete 
+     */
+    public function delete($uuid){
+        $this->app->logger->deleteInfo('PetController->add');
+        return $this->dao->delete($uuid);
+    }
 }
