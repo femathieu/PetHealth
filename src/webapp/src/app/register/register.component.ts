@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login/login.service';
 import { User } from '../models/user';
+import { HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +11,10 @@ import { User } from '../models/user';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(public loginService: LoginService) { }
+  constructor(
+    public loginService: LoginService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -17,7 +22,11 @@ export class RegisterComponent implements OnInit {
   save(): void {
     if(this.validEmail()){
       if(this.validPassword()){
-        this.loginService.register();
+        this.loginService.register().subscribe((response: HttpResponse<any>) => {
+            if(response.status == 200){
+              this.router.navigate(['/login']);
+            }
+        });
       }else{
         console.log('invalid passwd');
       }
