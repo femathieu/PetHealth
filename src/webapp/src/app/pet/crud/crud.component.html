@@ -3,22 +3,22 @@
         <mat-step [stepControl]="petFormStep1">
             <h1 class="main-title mb-4">Ajouter un animal</h1>
             <form [formGroup]="petFormStep1" (ngSubmit)="onSubmit()">
-                <mat-radio-group
-                aria-labelledby="example-radio-group-label"
-                [ngClass]="'radio-group'">
-                <mat-radio-button [ngClass]="'form-group radio-before radio-cat'" [value]="cat">
+              <mat-radio-group
+              aria-labelledby="pick a pet"
+              [ngClass]="'radio-group'">
+                <mat-radio-button [ngClass]="'form-group radio-before radio-cat'" value="cat">
                   Chat
                 </mat-radio-button>
-                <mat-radio-button [ngClass]="'form-group radio-before radio-dog'" [value]="dog">
+                <mat-radio-button [ngClass]="'form-group radio-before radio-dog'" value="dog">
                   Chien
                 </mat-radio-button>
-                <mat-radio-button [ngClass]="'form-group radio-before radio-rodent'" [value]="rodent">
+                <mat-radio-button [ngClass]="'form-group radio-before radio-rodent'" value="rodent">
                   Rongeur
                 </mat-radio-button>
-                <mat-radio-button [ngClass]="'form-group radio-before radio-bird'" [value]="bird">
+                <mat-radio-button [ngClass]="'form-group radio-before radio-bird'" value="bird">
                   Oiseau
                 </mat-radio-button>
-                <mat-radio-button [ngClass]="'form-group radio-before radio-other'" [value]="other">
+                <mat-radio-button [ngClass]="'form-group radio-before radio-other'" value="other">
                   Autre
                 </mat-radio-button>           
               </mat-radio-group>
