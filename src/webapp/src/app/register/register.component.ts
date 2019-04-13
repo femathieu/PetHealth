@@ -3,6 +3,9 @@ import { LoginService } from '../services/login/login.service';
 import { User } from '../models/user';
 import { HttpResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
+import { LoginComponent } from '../login/login.component';
+import { timer, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -10,10 +13,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
   constructor(
     public loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -23,9 +26,15 @@ export class RegisterComponent implements OnInit {
     if(this.validEmail()){
       if(this.validPassword()){
         this.loginService.register().subscribe((response: HttpResponse<any>) => {
+          if(response instanceof HttpResponse){
             if(response.status == 200){
-              this.router.navigate(['/login']);
+              this.snackBar.open('Inscription réussie', '', {duration: 1200});
+              let time = timer(1500, 1500).subscribe(_ => {
+                this.router.navigate(['/login']);
+                time.unsubscribe();
+              })
             }
+          }
         });
       }else{
         console.log('invalid passwd');

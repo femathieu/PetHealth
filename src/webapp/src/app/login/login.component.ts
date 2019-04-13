@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 import { LoginService } from '../services/login/login.service';
 
 import { User } from '../models/user';
+import { MAT_SNACK_BAR_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,9 @@ import { User } from '../models/user';
 export class LoginComponent implements OnInit {
   user: User = new User();
 
-  constructor(private loginService: LoginService) { }
+  constructor(
+    private loginService: LoginService,
+  ) { }
 
   ngOnInit() {
   }
