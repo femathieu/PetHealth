@@ -19,6 +19,7 @@ function generateToken($configToken, $user){
                 "aud" => $configToken["aud"],
                 "iat" => $configToken["iat"],
                 "nbf" => $configToken["nbf"],
+                "exp" => $configToken["exp"],
                 "data" => array(
                     "uuid" => $user["uuid"],
                     "firstname" => $user["firstname"],

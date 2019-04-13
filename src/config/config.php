@@ -9,6 +9,7 @@ $config = [
         "iss" => "http://127.0.0.1",
         "aud" => "http://127.0.0.1",
         "iat" => time(),
-        "nbf" => time()
+        "nbf" => time(),
+        "exp" => time() + 60 * 60 * 12
     ],
 ];

@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule} from '@angular/material/tabs';
 import { PetModule } from './pet/pet.module';
 import { MatSnackBarModule, MAT_SNACK_BAR_DATA, MatSnackBar } from '@angular/material';
+import { JwtModule, JwtHelperService } from '@auth0/angular-jwt';
 
 
 @NgModule({
@@ -37,14 +38,16 @@ import { MatSnackBarModule, MAT_SNACK_BAR_DATA, MatSnackBar } from '@angular/mat
     HttpClientModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    JwtModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpMiddleware,
       multi: true,
-    }
+    },
+    JwtHelperService
   ],
   bootstrap: [AppComponent]
 })
