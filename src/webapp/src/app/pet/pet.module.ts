@@ -20,6 +20,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { HeaderComponent } from '../header/header.component';
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -45,10 +46,12 @@ import { HeaderComponent } from '../header/header.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    JwtModule
   ],
   providers: [
     MatDatepickerModule,
+    JwtHelperService
   ]
 })
 
