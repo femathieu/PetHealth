@@ -6,6 +6,8 @@ import { Observable, of } from 'rxjs';
 import { User } from '../../models/user';
 import { UserService } from '../user/user.service';
 import { AppConfig } from '../../config';
+import { MatSnackBar } from '@angular/material';
+import { RegisterComponent } from 'src/app/register/register.component';
 
 @Injectable({
   providedIn: 'root'
@@ -21,12 +23,13 @@ export class LoginService {
   constructor(
     private client: HttpClient,
     private userService: UserService,
+    private snackBar: MatSnackBar
   ) {
     this.user = new User();
   }
 
   login(user: User) {
-    this.client.post(`${this.config.getApiBaseUrl}/user/login`, user, this.httpOptions)
+    this.client.post(`${this.config.getApiBaseUrl}/login`, user, this.httpOptions)
       .pipe(
         tap(_ => {console.log('login')}),
         catchError(this.handleError<User>('login', new User()))
@@ -41,7 +44,7 @@ export class LoginService {
     }
     
   register(): Observable<any> {
-    return this.client.post('http://localhost/user', this.user, {headers: this.httpOptions.headers, observe: 'response'},)
+    return this.client.post(`${this.config.getApiBaseUrl}/user`, this.user, {headers: this.httpOptions.headers, observe: 'response'},)
       .pipe(
         tap(_ => {console.log('register')}),
         catchError(this.handleError<User>('add user'))
