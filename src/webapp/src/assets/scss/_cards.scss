@@ -1,0 +1,103 @@
+// ---------------------------------------------------------
+// Cards
+// 1 - Reset Material Card elements
+// 2 - Bootstrap classes
+// 3 - Card content info (with blue span)
+// ---------------------------------------------------------
+
+
+// ------------------------------------------------
+// 1 - Reset Material Card elements
+// ------------------------------------------------
+.mat-card{
+    padding: 0 !important;
+    margin-top: 1rem;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.04) !important;
+    border-bottom-right-radius: 20px !important;
+}
+
+// ------------------------------------------------
+// 2 - Bootstrap classes
+// ------------------------------------------------
+
+.card{
+    border: 0;
+    position: relative;
+    .card-header{
+        border-bottom: none;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title-card-light{
+            line-height: 1.33;
+            letter-spacing: -0.3px;
+            color: #cbcbcb;
+            font-family: $muli;
+        }
+    }
+
+    .card-body{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: .75rem 0;
+        margin: 0 1.25rem;
+        &:nth-last-child(1){
+            border-top: 1px solid #f0f0f0;
+        }
+        &.card-body-border{
+            border-top: 1px solid #f0f0f0;
+        }
+        .card-svg{
+            width: 20%;
+            background: url('./assets/svg/drop.svg') no-repeat center;
+            text-align: center;
+            margin: 0 1rem 0 0;
+            img{
+                width: 45px;
+                height: 45px;
+                margin: 0 auto;
+            }
+        }
+        .card-text{
+            width: 80%;
+            line-height: 1.23;
+            .card-title{
+                font-family: $muli;
+                color: #565656;
+                font-weight: bold;
+                margin-bottom: 0;
+                line-height: 1.40;
+            }
+            p{
+                font-family: $muli;
+                color: #565656;
+                span{
+                    padding-right: .5rem;
+                }
+            }
+        }
+    }
+    .content-info{
+        background-color: #86ccd374;
+        padding: .75rem 1rem;
+        color: $darkBlue;
+        width: fit-content;
+        border-bottom-right-radius:  20px;
+        position: absolute;
+        span{
+            color: $darkBlue;  
+        }
+    }
+}
+
+
+// ------------------------------------------------
+// 3 - Card content info (with blue span)
+// ------------------------------------------------
+
+.card-content-info{
+    margin-bottom: 3.25rem;
+}

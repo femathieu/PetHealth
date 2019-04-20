@@ -35,3 +35,15 @@ figure {
     margin: 0;
     position: relative;
 }
+
+p{
+    margin-bottom: 0;
+}
+
+.btn:focus{
+    box-shadow: 0 0 0 0.2rem #81ccd23d;
+}
+
+.block-main-bg-light{
+    background-color: #fcfcfc;
+}
