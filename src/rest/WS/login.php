@@ -35,6 +35,7 @@ $app->post('/login', function(Request $req, Response $res, array $args){
     if($result){
         $user = $userCtrl->getUserByEmail($params['email']);
         $response["token"] = generateToken($this->get('configToken'), $user);
+        $response["user"] = $user;
         echo json_encode($response);
     }else{
         return $res->withJson($response, 400);

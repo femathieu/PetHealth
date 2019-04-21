@@ -21,4 +21,31 @@ class PetController {
         $this->app->logger->addInfo('PetController->add');
         return $this->dao->add($pet);
     }
+
+    /**
+     * Fetch a pet
+     * @param: $uuid - the uuid of the pet to fetch
+     */
+    public function get($uuid){
+        $this->app->logger->addInfo('PetController->get');
+        return $this->dao->get($uuid);
+    }
+
+    /**
+     * update a pet
+     * @param: $pet - data of the pet to update
+     */
+    public function update($pet, $uuid){
+        $this->app->logger->addInfo('PetController->update');
+        return $this->dao->update($pet, $uuid);
+    }
+
+    /**
+     * mark a pet as deleted
+     * @param: $uuid - the uuid of the pet to mark as deleted
+     */
+    public function markAsDelete($uuid){
+        $this->app->logger->addInfo('PetController->MarkAsDelete');
+        return $this->dao->markAsDelete($uuid);
+    }
 }

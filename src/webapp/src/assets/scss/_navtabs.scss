@@ -1,0 +1,19 @@
+// ---------------------------------------------------------
+// Navtabs
+// ---------------------------------------------------------
+
+.mat-tab-nav-bar{
+    justify-content: center;
+    @include shadow;
+    border-bottom: none;
+    .mat-tab-links{
+        width: 100%;
+        .mat-tab-link{
+            overflow: initial !important;
+            &:nth-child(2){
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}

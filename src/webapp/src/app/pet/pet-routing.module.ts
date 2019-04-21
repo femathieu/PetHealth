@@ -8,6 +8,7 @@ import { HealthBookComponent } from './health-book/health-book.component';
 import { ProfilComponent as PetProfil } from './profil/profil.component';
 import { CrudComponent } from './crud/crud.component';
 import { PetService } from '../services/pet/pet.service';
+import { AuthGuardService as AuthGuard } from '../services/auth-guard/auth-guard.service';
 
 const petRoutes: Routes = [
   { path: 'pet', component: PetComponent,
@@ -16,7 +17,8 @@ const petRoutes: Routes = [
       { path: 'healthbook', component: HealthBookComponent, data: { state: 'healthbook' } },
       { path: 'profil', component: PetProfil, data: { state: 'profil'} },
       { path: 'crud', component: CrudComponent },
-    ]
+    ],
+    canActivate: [AuthGuard]
   },
 ];
 

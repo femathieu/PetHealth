@@ -10,13 +10,13 @@
           <div class="col-12">
             <form class="form-content py-3">
               <div class="form-group">
-                <input type="text" [(ngModel)]="user.email" placeholder="Adresse e-mail" class="form-control">
+                <input type="text" name="email" [(ngModel)]="user.email" placeholder="Adresse e-mail" class="form-control">
                 <div class="invalid-feedback">
                   Veuillez entrez une adresse e-mail valide.
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" [(ngModel)]="user.passwd" placeholder="Mot de passe" class="form-control">
+                <input type="text" name="passwd" [(ngModel)]="user.passwd" placeholder="Mot de passe" class="form-control">
               </div>
               <button (click)="login()" class="btn btn-primary">valider</button>
             </form>
