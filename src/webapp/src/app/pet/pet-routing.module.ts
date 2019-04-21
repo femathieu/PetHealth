@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 
 import { PetComponent } from './pet/pet.component';
 import { MainComponent as PetMain } from './main/main.component' ;
 import { HealthBookComponent } from './health-book/health-book.component';
 import { ProfilComponent as PetProfil } from './profil/profil.component';
 import { CrudComponent } from './crud/crud.component';
+import { PetService } from '../services/pet/pet.service';
 
 const petRoutes: Routes = [
   { path: 'pet', component: PetComponent,
@@ -20,6 +22,13 @@ const petRoutes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(petRoutes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+    PetService,
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: { showError: true }
+    }
+  ]
 })
 export class PetRoutingModule { }

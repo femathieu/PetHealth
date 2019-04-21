@@ -3,13 +3,13 @@
 <mat-horizontal-stepper linear #stepper>
   <mat-step [stepControl]="firstFormGroup" errorMessage="ca ne marche paaas">
     <h2 class="main-title">Identité de l'animal</h2>
-    <form [formGroup]="firstFormGroup">
+    <form [formGroup]="firstFormGroup" (ngSubmit)="onSubmitFormFirst()">
       <mat-radio-group class="radio-group" formControlName="type">
-        <mat-radio-button class="form-group radio-before radio-cat" value="cat">Chat</mat-radio-button>    
-        <mat-radio-button class="form-group radio-before radio-dog" value="dog">Chien</mat-radio-button>    
-        <mat-radio-button class="form-group radio-before radio-rodent" value="rodent">Rongeur</mat-radio-button>    
-        <mat-radio-button class="form-group radio-before radio-bird" value="bird">Bird</mat-radio-button>    
-        <mat-radio-button class="form-group radio-before radio-other" value="other">Autre</mat-radio-button>    
+        <mat-radio-button class="form-group radio-before radio-cat" value="1">Chat</mat-radio-button>    
+        <mat-radio-button class="form-group radio-before radio-dog" value="2">Chien</mat-radio-button>    
+        <mat-radio-button class="form-group radio-before radio-rodent" value="3">Rongeur</mat-radio-button>    
+        <mat-radio-button class="form-group radio-before radio-bird" value="4">Bird</mat-radio-button>    
+        <mat-radio-button class="form-group radio-before radio-other" value="5">Autre</mat-radio-button>    
       </mat-radio-group>
       <div>
         <button mat-button matStepperNext class="btn btn-primary">Suivant</button>
@@ -17,11 +17,10 @@
     </form>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup" errorMessage="ERREUR">
-   
-    <form [formGroup]="secondFormGroup">
+    <form [formGroup]="secondFormGroup" (ngSubmit)="onSubmitFormSecond()">
         <h2 class="main-title">Identité de l'animal</h2>
         <mat-form-field>
-          <input id="inputPetName" [ngClass]="'form-control'" matInput placeholder="Nom de votre animal" formControlName="name" required>
+          <input id="inputPetName" class="form-control" matInput placeholder="Nom de votre animal" formControlName="name"  required>
         </mat-form-field>
         <h2 class="main-title">Date de naissance</h2>
         <mat-form-field>
