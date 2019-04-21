@@ -6,8 +6,6 @@ import { PetService } from '../../services/pet/pet.service';
 import { Pet } from '../../models/pet';
 import { HttpResponse } from '@angular/common/http';
 
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'pet-crud',
