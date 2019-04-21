@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatStepper } from '@angular/material';
 
 @Component({
   selector: 'pet-crud',
@@ -13,7 +14,10 @@ export class CrudComponent implements OnInit {
 
   petFormStep1 : FormGroup = this.fb.group({
     petFormStep1 : this.fb.group({
-      type:  ['']
+      type:  [
+        '', 
+        [Validators.required]
+      ]
     })
   });
   petFormStep2 : FormGroup = this.fb.group({
@@ -32,8 +36,13 @@ export class CrudComponent implements OnInit {
   ngOnInit() {
   }
   
-  onSubmit(): void {
-    console.warn(this.petFormStep1.value, this.petFormStep1.status);
+  submitStep1(stepper: MatStepper): void {
+    console.log(this.petFormStep1.status);
+    if(this.petFormStep1.status == 'VALID'){
+      stepper.next();
+    }else{
+      console.warn('pick something');
+    }
   }
   
 }

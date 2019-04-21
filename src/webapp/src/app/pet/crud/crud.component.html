@@ -1,58 +1,48 @@
-<main class="block-main block-main-add-pet">
-    <mat-horizontal-stepper [linear]="isLinear" #stepper>
-        <h2 class="main-title">Identité de l'animal</h2>
-        <mat-step [stepControl]="petFormStep1">
-            <h1 class="main-title">Ajouter un animal</h1>
-            <form [formGroup]="petFormStep1" (ngSubmit)="onSubmit()">
-                <mat-radio-group
-                aria-labelledby="example-radio-group-label"
-                [ngClass]="'radio-group'">
-                <mat-radio-button [ngClass]="'form-group radio-before radio-cat'" [value]="cat">
-                  Chat
-                </mat-radio-button>
-                <mat-radio-button [ngClass]="'form-group radio-before radio-dog'" [value]="dog">
-                  Chien
-                </mat-radio-button>
-                <mat-radio-button [ngClass]="'form-group radio-before radio-rodent'" [value]="rodent">
-                  Rongeur
-                </mat-radio-button>
-                <mat-radio-button [ngClass]="'form-group radio-before radio-bird'" [value]="bird">
-                  Oiseau
-                </mat-radio-button>
-                <mat-radio-button [ngClass]="'form-group radio-before radio-other'" [value]="other">
-                  Autre
-                </mat-radio-button>           
-              </mat-radio-group>
-              <div>
-                <!-- A supprimer ! -->
-                <!-- Next au clic du mat-radio-button -->
-                <button mat-button matStepperNext [ngClass]="'btn btn-primary'">Next</button>
-              </div>
-            </form>
-        </mat-step>
-    
-        <mat-step [stepControl]="petFormStep2">
-          <h2 class="main-title">Identité de l'animal</h2>
-          <form [formGroup]="petFormStep2" (ngSubmit)="onSubmit()">
-            <mat-form-field>
-              <input id="inputPetName" [ngClass]="'form-control'" matInput placeholder="Nom de votre animal" formControlName="name" required>
-            </mat-form-field>
-          </form>
 
-          <h2 class="main-title">Date de naissance</h2>
-          <form [formGroup]="petFormStep3" (ngSubmit)="onSubmit()">
-            <mat-form-field class="example-full-width">
-              <input matInput [ngClass]="'form-control'" [matDatepicker]="picker" placeholder="Choisir une date">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker touchUi #picker></mat-datepicker>
-            </mat-form-field>
-          </form>
-    
-          <div class="content-btn-validation">
-            <button mat-button matStepperPrevious [ngClass]="'btn btn-secondary'">Retour</button>
-            <button type="submit" [ngClass]="'btn btn-primary'">valider</button>
-          </div>
-        </mat-step>
-    
-    </mat-horizontal-stepper>
+<main class="block-main block-main-add-pet">
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="firstFormGroup" errorMessage="ca ne marche paaas">
+    <h2 class="main-title">Identité de l'animal</h2>
+    <form [formGroup]="firstFormGroup">
+      <mat-radio-group class="radio-group" formControlName="type">
+        <mat-radio-button class="form-group radio-before radio-cat" value="cat">Chat</mat-radio-button>    
+        <mat-radio-button class="form-group radio-before radio-dog" value="dog">Chien</mat-radio-button>    
+        <mat-radio-button class="form-group radio-before radio-rodent" value="rodent">Rongeur</mat-radio-button>    
+        <mat-radio-button class="form-group radio-before radio-bird" value="bird">Bird</mat-radio-button>    
+        <mat-radio-button class="form-group radio-before radio-other" value="other">Autre</mat-radio-button>    
+      </mat-radio-group>
+      <div>
+        <button mat-button matStepperNext class="btn btn-primary">Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" errorMessage="ERREUR">
+   
+    <form [formGroup]="secondFormGroup">
+        <h2 class="main-title">Identité de l'animal</h2>
+        <mat-form-field>
+          <input id="inputPetName" [ngClass]="'form-control'" matInput placeholder="Nom de votre animal" formControlName="name" required>
+        </mat-form-field>
+        <h2 class="main-title">Date de naissance</h2>
+        <mat-form-field>
+          <input matInput class="form-control" [matDatepicker]="picker" placeholder="Choisir une date" formControlName="birthdate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker></mat-datepicker>
+        </mat-form-field>
+
+      <div>
+        <button mat-button matStepperPrevious class="btn btn-secondary">Précédent</button>
+        <button mat-button matStepperNext class="btn btn-primary">Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+      <ng-template matStepLabel>Valide</ng-template>
+        <div class="main-title">Le carnet de santé est prêt !</div>
+        <a href="" class="btn btn-primary">Ajouter des informations</a>
+        <a href="" class="">Retour à la page</a>
+      <div>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
 </main>
