@@ -11,7 +11,6 @@ import { of, Observable } from 'rxjs';
 })
 export class PetService {
 
-  private baseUrlApi: string = 'http://localhost';
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -22,7 +21,7 @@ export class PetService {
   ) { }
 
   add(pet: Pet) : Observable<any> {
-    return this.client.post(`${this.config.getApiBaseUrl}/login`, pet, {headers: this.httpOptions.headers, observe: 'response'}).pipe(
+    return this.client.post(`${this.config.getApiBaseUrl}/pet`, pet, {headers: this.httpOptions.headers, observe: 'response'}).pipe(
       tap(_ => console.log('add pet')),
       catchError(this.handleError('add pet'))
     );

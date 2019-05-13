@@ -1,6 +1,7 @@
 export class Pet{
     uuid : string;
-    typeId : number;
+    pet_type_id : number;
     name : string;
     birthdate : number;
+    user_id: string;
 }

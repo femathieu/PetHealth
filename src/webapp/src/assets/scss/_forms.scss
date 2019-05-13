@@ -145,6 +145,14 @@ form{
     color: $pink;
 }
 
+.mat-form-field-invalid{
+    .mat-input-element{
+        border-color: $pink;
+        box-shadow: 0 0 0 0.1rem rgba(255, 0, 119, .3);
+        color: $pink;
+    }
+}
+
 // ------------------------------------------------
 // 4 - Reset : MaterialAngular formUI
 // ------------------------------------------------
@@ -196,3 +204,8 @@ form{
 .mat-form-field-flex{
     display: block !important;
 }
+
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    display: none !important;
+}
+

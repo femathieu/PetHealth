@@ -1,7 +1,7 @@
 
 <main class="block-main block-main-add-pet">
 <mat-horizontal-stepper linear #stepper>
-  <mat-step [stepControl]="firstFormGroup" errorMessage="ca ne marche paaas">
+  <mat-step [stepControl]="firstFormGroup">
     <h2 class="main-title">Identité de l'animal</h2>
     <form [formGroup]="firstFormGroup" (ngSubmit)="onSubmitFormFirst()">
       <mat-radio-group class="radio-group" formControlName="type">
@@ -16,12 +16,13 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup" errorMessage="ERREUR">
+  <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup" (ngSubmit)="onSubmitFormSecond()">
         <h2 class="main-title">Identité de l'animal</h2>
         <mat-form-field>
-          <input id="inputPetName" class="form-control" matInput placeholder="Nom de votre animal" formControlName="name"  required>
+          <input id="inputPetName" class="form-control" matInput placeholder="Nom de votre animal" formControlName="name" required>
         </mat-form-field>
+        <mat-error *ngIf="secondFormGroup.get('name').invalid">{{getErrorMessage()}}</mat-error>
         <h2 class="main-title">Date de naissance</h2>
         <mat-form-field>
           <input matInput class="form-control" [matDatepicker]="picker" placeholder="Choisir une date" formControlName="birthdate">

@@ -12,6 +12,7 @@ use \Controller\PetController;
 $app->post('/pet', function(Request $req, Response $res, array $args){
     $ctrl = new PetController($this);
     $params = json_decode($req->getBody(), true);
+    $this->logger->addInfo('=========================================='.json_encode(json_decode($req->getBody(), true)));
     if(!validToken($this)){
         return $res->withStatus(401);
     }
