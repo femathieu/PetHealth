@@ -54,7 +54,7 @@ class PetController {
      * @param: $uuid - the uuid of the pet to delete 
      */
     public function delete($uuid){
-        $this->app->logger->deleteInfo('PetController->add');
+        $this->app->logger->addInfo('PetController->delete');
         return $this->dao->delete($uuid);
     }
 }
