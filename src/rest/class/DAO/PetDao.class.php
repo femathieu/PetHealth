@@ -130,11 +130,11 @@ class PetDao extends Db {
      * @param: $uuid - the uuid of the pet to delete 
      */
     public function delete($uuid){
-        $this->app->logger->deleteInfo('PetDao->delete');
+        $this->app->logger->addInfo('PetDao->delete');
         $ret = null;
-        if(!empty($this->get($uuid))){
+        if($uuid != null && $uuid != ""){
             $uuidQuoted = $this->db()->quote($uuid);
-            $sql = "DELETE pet WHERE uuid = $uuidQuoted";
+            $sql = "DELETE FROM pet WHERE uuid = $uuidQuoted";
             $ret = $this->db()->query($sql);
         }
         return $ret;
